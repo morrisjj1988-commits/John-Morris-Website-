@@ -1,7 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PlaceholderPhoto from '../../components/PlaceholderPhoto.astro';
+import SitePhoto from '../../components/SitePhoto.astro';
 import { site } from '../../lib/site';
+import aboutPhoto from '../../assets/images/about-photo.jpg';
 
 const timeline = [
   {
@@ -48,7 +49,7 @@ const values = [
   <section class="section about-hero">
     <div class="container about-hero__inner">
       <div class="about-hero__media">
-        <PlaceholderPhoto label="Photo placeholder — Cllr John Morris" tone="navy" ratio="4 / 5" />
+        <SitePhoto image={aboutPhoto} alt="John Morris speaking at a council meeting" ratio="4 / 5" priority />
       </div>
       <div>
         <p class="eyebrow">About John</p>
