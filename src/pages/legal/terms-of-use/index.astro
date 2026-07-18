@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { site } from '../../../lib/site';
+---
+
+<BaseLayout
+  title="Terms of Use"
+  description="Terms of use for this website."
+  noindex={true}
+>
+  <section class="section legal">
+    <div class="container legal__inner prose">
+      <p class="eyebrow">Legal</p>
+      <h1>Terms of Use</h1>
+      <p class="text-muted"><em>Placeholder terms — review before launch.</em></p>
+
+      <h2>About this site</h2>
+      <p>
+        This website is published by, or on behalf of, {site.name}, {site.role}, {site.council}. It is intended
+        to provide information about John's work as a local councillor and to help constituents get in touch and
+        access casework support.
+      </p>
+
+      <h2>Accuracy of information</h2>
+      <p>
+        We try to keep the information on this site accurate and up to date, but council policies, contact
+        details, and surgery times can change. Where this site links to Newham Council or other official
+        sources, always check those sources for the most current information.
+      </p>
+
+      <h2>Use of this site</h2>
+      <p>
+        You're welcome to browse and share content from this site. Please don't use it in a way that's unlawful,
+        misleading, or that misrepresents Cllr Morris's views or role.
+      </p>
+
+      <h2>External links</h2>
+      <p>
+        This site links to external websites, including Newham Council and social media platforms. We aren't
+        responsible for the content or privacy practices of external sites.
+      </p>
+
+      <h2>Imprint</h2>
+      <p class="text-muted">{site.imprint}</p>
+      <p class="text-muted"><em>[Placeholder — confirm exact promoter/imprint wording required for UK political communications before launch.]</em></p>
+
+      <h2>Contact</h2>
+      <p>Questions about these terms? Contact <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .legal__inner {
+    max-width: 42rem;
+  }
+</style>

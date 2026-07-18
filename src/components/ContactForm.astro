@@ -1,0 +1,94 @@
+---
+// Static-site placeholder form. No backend is wired up yet (see README) —
+// on submit this shows an inline confirmation rather than actually sending
+// data anywhere. Swap the <form> action/method for a real form backend
+// (e.g. Formspree, Netlify Forms) before launch.
+interface Props {
+  variant?: 'casework' | 'general';
+  formId?: string;
+}
+
+const { variant = 'general', formId = 'contact-form' } = Astro.props;
+
+const issueTypes = [
+  'Housing',
+  'Council Tax & Benefits',
+  'Planning & Development',
+  'Streets, Bins & Recycling',
+  'Anti-Social Behaviour',
+  'Something Else',
+];
+---
+
+<form id={formId} class="contact-form" data-contact-form novalidate>
+  <div class="form-row">
+    <div class="form-field">
+      <label for={`${formId}-name`}>Full name</label>
+      <input id={`${formId}-name`} name="name" type="text" autocomplete="name" required />
+    </div>
+    <div class="form-field">
+      <label for={`${formId}-email`}>Email address</label>
+      <input id={`${formId}-email`} name="email" type="email" autocomplete="email" required />
+    </div>
+  </div>
+
+  {variant === 'casework' && (
+    <div class="form-row">
+      <div class="form-field">
+        <label for={`${formId}-address`}>Home address</label>
+        <span id={`${formId}-address-hint`} class="hint">Needed so I can check you're a Canning Town South resident</span>
+        <input id={`${formId}-address`} name="address" type="text" autocomplete="street-address" aria-describedby={`${formId}-address-hint`} required />
+      </div>
+      <div class="form-field">
+        <label for={`${formId}-issue`}>Issue type</label>
+        <select id={`${formId}-issue`} name="issue" required>
+          <option value="" selected disabled>Choose an issue type</option>
+          {issueTypes.map((issue) => <option value={issue}>{issue}</option>)}
+        </select>
+      </div>
+    </div>
+  )}
+
+  {variant === 'general' && (
+    <div class="form-field">
+      <label for={`${formId}-subject`}>Subject</label>
+      <input id={`${formId}-subject`} name="subject" type="text" required />
+    </div>
+  )}
+
+  <div class="form-field">
+    <label for={`${formId}-message`}>{variant === 'casework' ? 'Tell me what’s happening' : 'Message'}</label>
+    <textarea id={`${formId}-message`} name="message" rows="5" required></textarea>
+  </div>
+
+  <div class="checkbox-field">
+    <input id={`${formId}-consent`} name="consent" type="checkbox" required />
+    <label for={`${formId}-consent`}>
+      I consent to Cllr Morris's office storing my details in order to respond to this enquiry, in line with the{' '}
+      <a href="/legal/privacy-policy/">Privacy Policy</a>.
+    </label>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Send message</button>
+
+  <p class="form-note" role="status" aria-live="polite" data-form-status hidden>
+    Thanks — your message has been noted. This form is a working preview; connect it to a real inbox before launch (see README).
+  </p>
+</form>
+
+<script>
+  document.querySelectorAll<HTMLFormElement>('[data-contact-form]').forEach((form) => {
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      const status = form.querySelector<HTMLElement>('[data-form-status]');
+      if (status) {
+        status.hidden = false;
+      }
+      form.reset();
+    });
+  });
+</script>

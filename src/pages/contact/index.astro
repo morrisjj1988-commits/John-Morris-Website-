@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import SocialBar from '../../components/SocialBar.astro';
+import { site } from '../../lib/site';
+---
+
+<BaseLayout
+  title="Contact"
+  description="Contact John Morris, your local councillor for Canning Town South on Newham Council — by email, phone, or the contact form below."
+>
+  <section class="section page-intro">
+    <div class="container page-intro__inner">
+      <p class="eyebrow">Contact</p>
+      <h1>Get in touch</h1>
+      <p class="text-muted">
+        Whether it's a casework issue, a question about council services, or just a comment on something local —
+        I want to hear from you.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container contact-grid">
+      <div class="card form-card">
+        <h2>Send a message</h2>
+        <ContactForm variant="general" formId="contact-page-form" />
+      </div>
+
+      <div class="contact-details">
+        <div class="card detail-card">
+          <h2>Direct contact</h2>
+          <p><strong>Email</strong><br /><a href={`mailto:${site.email}`}>{site.email}</a></p>
+          <p><strong>Phone</strong><br /><a href={`tel:${site.phone.replace(/\s+/g, '')}`}>{site.phone}</a></p>
+          <p><strong>Office</strong><br />{site.officeAddress}</p>
+        </div>
+
+        <div class="card detail-card">
+          <h2>Ward surgeries</h2>
+          <p><strong>{site.surgery.frequency}</strong></p>
+          <p class="text-muted">{site.surgery.location}</p>
+          <p class="text-muted">{site.surgery.note}</p>
+        </div>
+
+        <div class="card detail-card">
+          <h2>Follow &amp; message on social media</h2>
+          <SocialBar variant="dark" />
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-intro__inner {
+    max-width: 44rem;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .form-card,
+  .detail-card {
+    padding: 2rem;
+  }
+
+  .form-card h2,
+  .detail-card h2 {
+    font-size: 1.2rem;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .detail-card p {
+    margin-bottom: 0.9rem;
+  }
+
+  @media (max-width: 900px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { site } from '../../../lib/site';
+---
+
+<BaseLayout
+  title="Privacy Policy"
+  description="How Cllr John Morris's office collects, uses, and protects your personal data."
+  noindex={true}
+>
+  <section class="section legal">
+    <div class="container legal__inner prose">
+      <p class="eyebrow">Legal</p>
+      <h1>Privacy Policy</h1>
+      <p class="text-muted">
+        <em>Placeholder policy — this page is a starting template and must be reviewed by Cllr Morris (and, if
+        applicable, a data protection adviser) before the site goes live.</em>
+      </p>
+
+      <h2>Who we are</h2>
+      <p>
+        This website is run on behalf of {site.name}, {site.role}, {site.council}. For any questions about this
+        policy or how your data is handled, contact <a href={`mailto:${site.email}`}>{site.email}</a>.
+      </p>
+
+      <h2>What we collect</h2>
+      <p>When you use this website, we may collect:</p>
+      <ul>
+        <li>Information you submit through the contact, casework, or newsletter sign-up forms (such as your name, email address, home address, and the details of your enquiry).</li>
+        <li>Basic technical information needed to operate the site securely.</li>
+      </ul>
+
+      <h2>How we use it</h2>
+      <ul>
+        <li>To respond to your enquiry or casework issue, including, where necessary, raising it with Newham Council or other organisations on your behalf.</li>
+        <li>To send you email updates, but only if you've actively opted in via the newsletter sign-up form.</li>
+      </ul>
+
+      <h2>How long we keep it</h2>
+      <p>
+        We keep casework correspondence for as long as reasonably necessary to resolve your issue and for a
+        reasonable period afterwards, in case the matter is reopened. <em>[Placeholder — confirm a specific
+        retention period.]</em>
+      </p>
+
+      <h2>Your rights</h2>
+      <p>
+        Under UK data protection law, you have the right to ask what personal data we hold about you, to have it
+        corrected, and in most cases to ask for it to be deleted or for us to stop processing it. To exercise any
+        of these rights, contact <a href={`mailto:${site.email}`}>{site.email}</a>.
+      </p>
+
+      <h2>Newsletter sign-up</h2>
+      <p>
+        We only add you to our email update list if you tick the consent box on the sign-up form. You can
+        unsubscribe at any time using the link in any email we send, or by contacting us directly.
+      </p>
+
+      <h2>Third parties</h2>
+      <p>
+        We do not sell your personal data. <em>[Placeholder — list any third-party services used once selected,
+        e.g. a mailing list provider or form backend, along with links to their own privacy policies.]</em>
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .legal__inner {
+    max-width: 42rem;
+  }
+</style>

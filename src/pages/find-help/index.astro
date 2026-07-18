@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import { helpCategories, site } from '../../lib/site';
+---
+
+<BaseLayout
+  title="Find Help"
+  description="Find out what your Newham councillor can help with — housing, council tax, planning, bins and streets, anti-social behaviour — and send Cllr John Morris your enquiry."
+>
+  <section class="section page-intro">
+    <div class="container page-intro__inner">
+      <p class="eyebrow">Casework</p>
+      <h1>How can I help you?</h1>
+      <p class="text-muted">
+        As your councillor, one of my most important jobs is casework — helping residents cut through council
+        bureaucracy and get problems sorted. I can't always fix everything, and some issues take time, but I will
+        always look into what you raise and be honest about what I can and can't do.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="grid grid-3">
+        {helpCategories.map((item) => (
+          <div class="card help-card">
+            <h3>{item.title}</h3>
+            <p class="text-muted">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container surgery-grid">
+      <div class="card surgery-card">
+        <h2>Ward surgeries</h2>
+        <p><strong>{site.surgery.frequency}</strong></p>
+        <p class="text-muted">{site.surgery.location}</p>
+        <p class="text-muted">{site.surgery.note}</p>
+      </div>
+      <div class="card surgery-card">
+        <h2>Prefer to call or email?</h2>
+        <p>Email: <a href={`mailto:${site.email}`}>{site.email}</a></p>
+        <p>Phone: <a href={`tel:${site.phone.replace(/\s+/g, '')}`}>{site.phone}</a></p>
+        <p class="text-muted">
+          You can also reach me on social media — see the links in the header and footer of this site.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container form-section">
+      <div class="section-header">
+        <p class="eyebrow">Enquiry form</p>
+        <h2>Tell me what's going on</h2>
+        <p class="text-muted">
+          Fill in as much detail as you can — including any reference numbers if you've already contacted the
+          council — and I'll get back to you as soon as possible.
+        </p>
+      </div>
+      <div class="card form-card">
+        <ContactForm variant="casework" formId="find-help-form" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-intro__inner {
+    max-width: 44rem;
+  }
+
+  .help-card {
+    padding: 1.75rem;
+  }
+
+  .surgery-grid {
+    display: grid;
+    gap: 1.75rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+
+  .surgery-card {
+    padding: 1.75rem;
+  }
+
+  .surgery-card h2 {
+    font-size: 1.25rem;
+  }
+
+  .form-section {
+    max-width: 46rem;
+  }
+
+  .form-card {
+    padding: 2rem;
+    margin-top: 1rem;
+  }
+</style>

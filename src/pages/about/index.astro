@@ -1,0 +1,205 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PlaceholderPhoto from '../../components/PlaceholderPhoto.astro';
+import { site } from '../../lib/site';
+
+const timeline = [
+  {
+    year: '2022',
+    title: 'Elected as Councillor for Canning Town South',
+    body: "Elected to Newham Council to represent Canning Town South, after several years of campaigning and volunteering locally.",
+  },
+  {
+    year: '2019–2022',
+    title: 'Local campaigning and community volunteering',
+    body: 'Volunteered with local community and tenants\' groups, campaigning on housing standards and green spaces ahead of standing for election.',
+  },
+  {
+    year: 'Before',
+    title: 'Grew up and settled in Newham',
+    body: 'Grew up locally and has lived in and around Canning Town for over a decade, with deep family and community ties to the area.',
+  },
+];
+
+const values = [
+  {
+    title: 'Housing that\'s fit to live in',
+    body: 'Pushing the council and housing associations to fix repairs quickly and build genuinely affordable homes as the area regenerates.',
+  },
+  {
+    title: 'A cleaner, safer neighbourhood',
+    body: 'Backing better street cleansing, more reliable bin collections, and a visible, responsive approach to anti-social behaviour.',
+  },
+  {
+    title: 'A community that isn\'t left behind by regeneration',
+    body: 'Making sure long-standing residents benefit from investment in Canning Town South, not just newer developments.',
+  },
+  {
+    title: 'Honest, responsive representation',
+    body: 'Being upfront about what the council can and can\'t do, replying promptly, and following through on casework.',
+  },
+];
+---
+
+<BaseLayout
+  title="About"
+  description="Meet John Morris, your local councillor for Canning Town South on Newham Council — his background, priorities, and why he stands up for this community."
+>
+  <section class="section about-hero">
+    <div class="container about-hero__inner">
+      <div class="about-hero__media">
+        <PlaceholderPhoto label="Photo placeholder — Cllr John Morris" tone="navy" ratio="4 / 5" />
+      </div>
+      <div>
+        <p class="eyebrow">About John</p>
+        <h1>A local voice for Canning Town South</h1>
+        <p class="text-muted lede">
+          I'm John Morris, and I've represented Canning Town South on Newham Council since 2022. This is my home
+          ward — I know its streets, its estates, and the issues that matter to the people who live here, because
+          I live here too.
+        </p>
+        <p class="text-muted">
+          I stood for the council because I was tired of seeing residents get passed between departments on
+          issues that should be simple to fix. Whether it's a repair that's been outstanding for months or a
+          planning application nobody was told about, my job is to make the council work for you, not the other
+          way around.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header center-header">
+        <p class="eyebrow">Priorities</p>
+        <h2>What I'm working on</h2>
+      </div>
+      <div class="grid grid-2">
+        {values.map((value) => (
+          <div class="card value-card">
+            <h3>{value.title}</h3>
+            <p class="text-muted">{value.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container timeline-section">
+      <div class="section-header">
+        <p class="eyebrow">Journey</p>
+        <h2>How I got here</h2>
+      </div>
+      <ol class="timeline">
+        {timeline.map((item) => (
+          <li class="timeline__item">
+            <span class="timeline__year">{item.year}</span>
+            <div>
+              <h3>{item.title}</h3>
+              <p class="text-muted">{item.body}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container council-link">
+      <div class="card council-card">
+        <h2>Official council profile</h2>
+        <p class="text-muted">
+          You can also view John's official councillor profile, register of interests, and committee membership
+          on the Newham Council website.
+        </p>
+        <a class="btn btn-outline-dark" href={site.newhamProfileUrl} target="_blank" rel="noopener noreferrer">
+          View Newham Council profile
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .about-hero__inner {
+    display: grid;
+    grid-template-columns: 0.7fr 1.3fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .about-hero__media {
+    max-width: 20rem;
+  }
+
+  .lede {
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 820px) {
+    .about-hero__inner {
+      grid-template-columns: 1fr;
+    }
+    .about-hero__media {
+      max-width: 14rem;
+      margin-inline: auto;
+    }
+  }
+
+  .center-header {
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  .value-card {
+    padding: 1.75rem;
+  }
+
+  .timeline-section {
+    max-width: 46rem;
+  }
+
+  .timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-left: 2px solid var(--color-border);
+  }
+
+  .timeline__item {
+    display: grid;
+    grid-template-columns: 6rem 1fr;
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+    padding-left: 1.5rem;
+    margin-left: -2px;
+    border-left: 2px solid var(--color-red-600);
+  }
+
+  .timeline__item:last-child {
+    padding-bottom: 0;
+  }
+
+  .timeline__year {
+    font-weight: 700;
+    color: var(--color-red-600);
+  }
+
+  .timeline__item h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.3rem;
+  }
+
+  @media (max-width: 560px) {
+    .timeline__item {
+      grid-template-columns: 1fr;
+      gap: 0.3rem;
+    }
+  }
+
+  .council-card {
+    padding: 2rem;
+    max-width: 40rem;
+  }
+</style>

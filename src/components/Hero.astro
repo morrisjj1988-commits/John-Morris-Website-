@@ -1,0 +1,83 @@
+---
+import PlaceholderPhoto from './PlaceholderPhoto.astro';
+---
+
+<section class="hero">
+  <div class="container hero__inner">
+    <div class="hero__copy">
+      <p class="eyebrow">Your local councillor for Canning Town South</p>
+      <h1>Working hard for Canning Town South</h1>
+      <p class="hero__lede">
+        I'm John Morris, your councillor at Newham Council. From housing and bins to
+        planning and anti-social behaviour, I'm here to help you get problems sorted and to
+        stand up for our community.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn-primary" href="/contact/">Get in touch</a>
+        <a class="btn btn-secondary hero__secondary" href="/find-help/">See how I can help</a>
+      </div>
+    </div>
+    <div class="hero__media">
+      <PlaceholderPhoto label="Photo placeholder — headshot of Cllr John Morris" tone="red" ratio="1 / 1" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    background: linear-gradient(180deg, var(--color-surface-alt), var(--color-bg));
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .hero__inner {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 3rem;
+    align-items: center;
+    padding-block: clamp(2.5rem, 6vw, 5rem);
+  }
+
+  .hero__lede {
+    font-size: 1.15rem;
+    color: var(--color-text-muted);
+    max-width: 40rem;
+  }
+
+  .hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .hero__secondary {
+    color: var(--color-navy-900);
+    border-color: var(--color-navy-900);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .hero__secondary { color: #fff; border-color: #fff; }
+  }
+
+  .hero__secondary:hover {
+    background: var(--color-navy-900);
+    color: #fff;
+  }
+
+  .hero__media {
+    max-width: 22rem;
+    margin-inline: auto;
+    width: 100%;
+  }
+
+  @media (max-width: 820px) {
+    .hero__inner {
+      grid-template-columns: 1fr;
+    }
+
+    .hero__media {
+      max-width: 16rem;
+      order: -1;
+    }
+  }
+</style>

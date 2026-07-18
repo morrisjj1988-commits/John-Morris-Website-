@@ -1,0 +1,33 @@
+---
+import SocialBar from './SocialBar.astro';
+---
+
+<div class="top-strip">
+  <div class="container top-strip__inner">
+    <p>Stay updated with Cllr Morris:</p>
+    <SocialBar variant="light" size={16} />
+  </div>
+</div>
+
+<style>
+  .top-strip {
+    background: var(--color-navy-900);
+    color: #fff;
+  }
+
+  .top-strip__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding-block: 0.55rem;
+    font-size: 0.85rem;
+  }
+
+  .top-strip__inner p {
+    margin: 0;
+    font-weight: 600;
+    opacity: 0.9;
+  }
+</style>

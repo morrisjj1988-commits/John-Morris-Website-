@@ -1,0 +1,84 @@
+---
+import PlaceholderPhoto from './PlaceholderPhoto.astro';
+
+interface Props {
+  slug: string;
+  title: string;
+  date: Date;
+  category: string;
+  excerpt: string;
+  imageAlt: string;
+}
+
+const { slug, title, date, category, excerpt, imageAlt } = Astro.props;
+
+const toneByCategory: Record<string, 'navy' | 'red' | 'gold'> = {
+  Housing: 'navy',
+  Community: 'gold',
+  Environment: 'navy',
+  Council: 'red',
+  Transport: 'gold',
+};
+
+const formattedDate = date.toLocaleDateString('en-GB', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+});
+---
+
+<article class="news-card card">
+  <a href={`/news/${slug}/`} class="news-card__image-link" tabindex="-1" aria-hidden="true">
+    <PlaceholderPhoto label={imageAlt} tone={toneByCategory[category] ?? 'navy'} ratio="16 / 10" />
+  </a>
+  <div class="news-card__body">
+    <p class="news-card__meta">
+      <span class="news-card__category">{category}</span>
+      <span aria-hidden="true">&middot;</span>
+      <time datetime={date.toISOString()}>{formattedDate}</time>
+    </p>
+    <h3><a href={`/news/${slug}/`}>{title}</a></h3>
+    <p class="text-muted">{excerpt}</p>
+    <a class="news-card__link" href={`/news/${slug}/`}>Read more &rarr;</a>
+  </div>
+</article>
+
+<style>
+  .news-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .news-card__image-link {
+    display: block;
+  }
+
+  .news-card__body {
+    padding: 1.4rem 1.5rem 1.6rem;
+  }
+
+  .news-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .news-card h3 a {
+    text-decoration: none;
+    color: var(--color-navy-900);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .news-card h3 a { color: #fff; }
+  }
+
+  .news-card h3 a:hover {
+    color: var(--color-red-600);
+  }
+
+  .news-card__link {
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.92rem;
+  }
+</style>

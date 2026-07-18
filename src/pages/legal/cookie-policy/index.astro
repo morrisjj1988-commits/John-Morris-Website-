@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { site } from '../../../lib/site';
+---
+
+<BaseLayout
+  title="Cookie Policy"
+  description="How this website uses cookies and similar technologies."
+  noindex={true}
+>
+  <section class="section legal">
+    <div class="container legal__inner prose">
+      <p class="eyebrow">Legal</p>
+      <h1>Cookie Policy</h1>
+      <p class="text-muted">
+        <em>Placeholder policy — update this page to reflect the exact cookies/analytics tools in use once the
+        site is finalised.</em>
+      </p>
+
+      <h2>What are cookies?</h2>
+      <p>
+        Cookies are small text files placed on your device when you visit a website. They're widely used to make
+        websites work, or work more efficiently, as well as to provide information to the site owner.
+      </p>
+
+      <h2>How this site uses cookies</h2>
+      <p>
+        This website is built to be as lightweight as possible and does not currently use tracking or advertising
+        cookies. <em>[Placeholder — if analytics (e.g. a privacy-friendly analytics tool) or a form/newsletter
+        provider is added later, list the specific cookies they set here, including name, purpose, and expiry.]</em>
+      </p>
+
+      <h2>Essential cookies</h2>
+      <p>
+        Some strictly necessary cookies may be used to remember your cookie consent choice, or to keep a
+        multi-step form working correctly. These don't require consent under UK cookie rules.
+      </p>
+
+      <h2>Managing cookies</h2>
+      <p>
+        Most web browsers let you control cookies through their settings. Blocking some cookies may affect how
+        parts of this website work.
+      </p>
+
+      <p class="text-muted">
+        Questions about this policy? Contact <a href={`mailto:${site.email}`}>{site.email}</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .legal__inner {
+    max-width: 42rem;
+  }
+</style>
