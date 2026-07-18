@@ -3,10 +3,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import NewsCard from '../components/NewsCard.astro';
 import Newsletter from '../components/Newsletter.astro';
-import PlaceholderPhoto from '../components/PlaceholderPhoto.astro';
+import SitePhoto from '../components/SitePhoto.astro';
 import { helpCategories } from '../lib/site';
 import { withBase } from '../lib/url';
 import { getCollection } from 'astro:content';
+import canningTownSouth from '../assets/images/canning-town-south.jpg';
 
 const allPosts = await getCollection('news', ({ data }) => !data.draft);
 const latestPosts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 6);
@@ -21,7 +22,7 @@ const latestPosts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.
   <section class="section quote-section">
     <div class="container quote-grid">
       <div class="quote-media">
-        <PlaceholderPhoto label="Photo placeholder — Cllr John Morris in Canning Town South" tone="navy" ratio="4 / 5" />
+        <SitePhoto image={canningTownSouth} alt="John Morris out and about in Canning Town South" ratio="4 / 3" />
       </div>
       <div class="quote-copy">
         <p class="eyebrow">In his own words</p>

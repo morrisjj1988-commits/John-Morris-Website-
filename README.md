@@ -117,8 +117,12 @@ in the original project brief — the assumed URL pattern may not match the real
 Several things in this build are realistic placeholders, flagged in code comments, ready to be swapped for
 real content:
 
-- **Photos** — every photo on the site (`PlaceholderPhoto` component) is currently a labelled placeholder
-  graphic, not a real image. Replace with real headshots/community photos once supplied.
+- **Photos** — the homepage hero headshot and the "in his own words" photo are real (see `SitePhoto`
+  component and `src/assets/images/`). Everything else (`PlaceholderPhoto` component: About page photo,
+  and every news post's header image) is still a labelled placeholder graphic. To add a real photo, drop
+  the file in `src/assets/images/`, import it in the relevant `.astro` file, and swap `PlaceholderPhoto`
+  for `SitePhoto` (see `Hero.astro` or `index.astro` for the pattern) — Astro automatically compresses and
+  resizes it at build time.
 - **Contact details** — email, phone, and office address in `src/lib/site.ts` (`site.email`, `site.phone`,
   `site.officeAddress`) are placeholders.
 - **Ward surgery details** — `site.surgery` in `src/lib/site.ts` needs a confirmed time/venue.

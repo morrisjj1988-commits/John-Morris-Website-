@@ -1,6 +1,7 @@
 ---
-import PlaceholderPhoto from './PlaceholderPhoto.astro';
+import SitePhoto from './SitePhoto.astro';
 import { withBase } from '../lib/url';
+import headshot from '../assets/images/headshot.jpg';
 ---
 
 <section class="hero">
@@ -19,7 +20,7 @@ import { withBase } from '../lib/url';
       </div>
     </div>
     <div class="hero__media">
-      <PlaceholderPhoto label="Photo placeholder — headshot of Cllr John Morris" tone="red" ratio="1 / 1" />
+      <SitePhoto image={headshot} alt="John Morris, councillor for Canning Town South" ratio="1 / 1" priority />
     </div>
   </div>
 </section>
