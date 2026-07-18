@@ -10,7 +10,7 @@ export const site = {
   phone: '020 7000 0000',
   officeAddress: 'Newham Dockside, 1000 Dockside Road, London E16 2QU',
   surgery: {
-    frequency: 'First Saturday of every month, 10:00am–12:00pm',
+    frequency: 'Third Saturday of every month, 10:00am–12:00pm',
     location: 'Canning Town South Ward Surgery — venue to be confirmed',
     note: 'Surgery details are provisional. No appointment needed — drop in, or contact Cllr Morris to arrange a convenient time.',
   },
