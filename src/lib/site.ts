@@ -4,7 +4,7 @@ export const site = {
   role: 'Local Councillor for Canning Town South',
   council: 'London Borough of Newham',
   ward: 'Canning Town South',
-  url: 'https://www.cllrjohnmorris.co.uk',
+  url: 'https://johnmorris.uk',
   // Placeholder contact details — replace with real details before launch.
   email: 'john.morris@newham.gov.uk',
   phone: '020 7000 0000',
