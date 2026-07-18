@@ -51,8 +51,8 @@ export const socialLinks: SocialLink[] = [
   { platform: 'Bluesky', handle: '@Plaistovian', url: 'https://bsky.app/profile/Plaistovian.bsky.social', icon: 'simple-icons:bluesky' },
   { platform: 'X (Twitter)', handle: '@Plaistovian', url: 'https://x.com/Plaistovian', icon: 'simple-icons:x' },
   { platform: 'Threads', handle: '@Plaistovian', url: 'https://www.threads.net/@Plaistovian', icon: 'simple-icons:threads' },
-  { platform: 'Facebook', handle: 'Cllr John Morris', url: 'https://www.facebook.com/CllrJohnMorris', icon: 'simple-icons:facebook' },
-  { platform: 'Instagram', handle: 'Cllr John Morris', url: 'https://www.instagram.com/CllrJohnMorris', icon: 'simple-icons:instagram' },
+  { platform: 'Facebook', handle: 'Cllr John Morris', url: 'https://www.facebook.com/share/1BUcTGDnam/', icon: 'simple-icons:facebook' },
+  { platform: 'Instagram', handle: '@cllr.johnmorris', url: 'https://www.instagram.com/cllr.johnmorris?igsh=MWxpaHliZHpxYWVhNw==', icon: 'simple-icons:instagram' },
 ];
 
 export const helpCategories = [
