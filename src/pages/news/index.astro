@@ -26,35 +26,41 @@ const categories = ['All', ...Array.from(new Set(allPosts.map((post) => post.dat
 
   <section class="section section-alt">
     <div class="container">
-      <div class="filters" role="group" aria-label="Filter news by category">
-        {categories.map((category, index) => (
-          <button
-            type="button"
-            class="filter-btn"
-            data-category={category}
-            aria-pressed={index === 0 ? 'true' : 'false'}
-          >
-            {category}
-          </button>
-        ))}
-      </div>
-
-      <div class="grid grid-3" id="news-grid">
-        {allPosts.map((post) => (
-          <div class="news-grid-item" data-category={post.data.category}>
-            <NewsCard
-              slug={post.id}
-              title={post.data.title}
-              date={post.data.date}
-              category={post.data.category}
-              excerpt={post.data.excerpt}
-              imageAlt={post.data.imageAlt}
-            />
+      {allPosts.length > 0 ? (
+        <>
+          <div class="filters" role="group" aria-label="Filter news by category">
+            {categories.map((category, index) => (
+              <button
+                type="button"
+                class="filter-btn"
+                data-category={category}
+                aria-pressed={index === 0 ? 'true' : 'false'}
+              >
+                {category}
+              </button>
+            ))}
           </div>
-        ))}
-      </div>
 
-      <p id="news-empty" class="text-muted" hidden>No updates in this category yet — check back soon.</p>
+          <div class="grid grid-3" id="news-grid">
+            {allPosts.map((post) => (
+              <div class="news-grid-item" data-category={post.data.category}>
+                <NewsCard
+                  slug={post.id}
+                  title={post.data.title}
+                  date={post.data.date}
+                  category={post.data.category}
+                  excerpt={post.data.excerpt}
+                  imageAlt={post.data.imageAlt}
+                />
+              </div>
+            ))}
+          </div>
+
+          <p id="news-empty" class="text-muted" hidden>No updates in this category yet — check back soon.</p>
+        </>
+      ) : (
+        <p class="text-muted no-news">No news posted yet — check back soon.</p>
+      )}
     </div>
   </section>
 </BaseLayout>
@@ -86,6 +92,11 @@ const categories = ['All', ...Array.from(new Set(allPosts.map((post) => post.dat
 <style>
   .page-intro__inner {
     max-width: 44rem;
+  }
+
+  .no-news {
+    text-align: center;
+    padding-block: 1rem;
   }
 
   .filters {

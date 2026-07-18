@@ -70,22 +70,28 @@ const latestPosts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.
         <h2>News from Canning Town South</h2>
       </div>
 
-      <div class="grid grid-3">
-        {latestPosts.map((post) => (
-          <NewsCard
-            slug={post.id}
-            title={post.data.title}
-            date={post.data.date}
-            category={post.data.category}
-            excerpt={post.data.excerpt}
-            imageAlt={post.data.imageAlt}
-          />
-        ))}
-      </div>
+      {latestPosts.length > 0 ? (
+        <>
+          <div class="grid grid-3">
+            {latestPosts.map((post) => (
+              <NewsCard
+                slug={post.id}
+                title={post.data.title}
+                date={post.data.date}
+                category={post.data.category}
+                excerpt={post.data.excerpt}
+                imageAlt={post.data.imageAlt}
+              />
+            ))}
+          </div>
 
-      <div class="center help-cta">
-        <a class="btn btn-secondary news-all-link" href={withBase('/news/')}>See all news &rarr;</a>
-      </div>
+          <div class="center help-cta">
+            <a class="btn btn-secondary news-all-link" href={withBase('/news/')}>See all news &rarr;</a>
+          </div>
+        </>
+      ) : (
+        <p class="text-muted no-news">No news posted yet — check back soon.</p>
+      )}
     </div>
   </section>
 
@@ -97,6 +103,11 @@ const latestPosts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.
 </BaseLayout>
 
 <style>
+  .no-news {
+    text-align: center;
+    padding-block: 1rem 1.5rem;
+  }
+
   .quote-grid {
     display: grid;
     grid-template-columns: 0.7fr 1.3fr;
