@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import PlaceholderPhoto from '../../components/PlaceholderPhoto.astro';
 import NewsCard from '../../components/NewsCard.astro';
 import { getCollection, render } from 'astro:content';
+import { withBase } from '../../lib/url';
 
 export async function getStaticPaths() {
   const posts = await getCollection('news', ({ data }) => !data.draft);
@@ -30,7 +31,7 @@ const formattedDate = post.data.date.toLocaleDateString('en-GB', {
 <BaseLayout title={post.data.title} description={post.data.excerpt}>
   <article class="section post">
     <div class="container post__inner">
-      <a class="back-link" href="/news/">&larr; Back to news</a>
+      <a class="back-link" href={withBase('/news/')}>&larr; Back to news</a>
       <p class="news-card__meta post-meta">
         <span class="news-card__category">{post.data.category}</span>
         <span aria-hidden="true">&middot;</span>

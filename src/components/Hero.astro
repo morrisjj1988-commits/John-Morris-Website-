@@ -1,5 +1,6 @@
 ---
 import PlaceholderPhoto from './PlaceholderPhoto.astro';
+import { withBase } from '../lib/url';
 ---
 
 <section class="hero">
@@ -13,8 +14,8 @@ import PlaceholderPhoto from './PlaceholderPhoto.astro';
         stand up for our community.
       </p>
       <div class="hero__actions">
-        <a class="btn btn-primary" href="/contact/">Get in touch</a>
-        <a class="btn btn-secondary hero__secondary" href="/find-help/">See how I can help</a>
+        <a class="btn btn-primary" href={withBase('/contact/')}>Get in touch</a>
+        <a class="btn btn-secondary hero__secondary" href={withBase('/find-help/')}>See how I can help</a>
       </div>
     </div>
     <div class="hero__media">

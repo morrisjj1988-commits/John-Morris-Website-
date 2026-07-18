@@ -1,19 +1,21 @@
 ---
 import TopSocialStrip from './TopSocialStrip.astro';
 import { primaryNav, site } from '../lib/site';
+import { withBase } from '../lib/url';
 
 const currentPath = new URL(Astro.request.url).pathname;
 
 function isActive(href: string) {
-  if (href === '/') return currentPath === '/';
-  return currentPath.startsWith(href);
+  const target = withBase(href);
+  if (href === '/') return currentPath === target;
+  return currentPath.startsWith(target);
 }
 ---
 
 <TopSocialStrip />
 <header class="site-header">
   <div class="container site-header__inner">
-    <a href="/" class="brand">
+    <a href={withBase('/')} class="brand">
       <span class="brand__name">{site.name}</span>
       <span class="brand__role">{site.ward} &middot; {site.council}</span>
     </a>
@@ -33,13 +35,13 @@ function isActive(href: string) {
       <ul>
         {primaryNav.map((link) => (
           <li>
-            <a href={link.href} aria-current={isActive(link.href) ? 'page' : undefined}>
+            <a href={withBase(link.href)} aria-current={isActive(link.href) ? 'page' : undefined}>
               {link.label}
             </a>
           </li>
         ))}
       </ul>
-      <a class="btn btn-primary nav-cta" href="/contact/">Get in touch</a>
+      <a class="btn btn-primary nav-cta" href={withBase('/contact/')}>Get in touch</a>
     </nav>
   </div>
 </header>

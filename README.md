@@ -7,12 +7,40 @@ Campaign/representative website for **Cllr John Morris**, councillor for **Canni
 
 ```bash
 npm install
-npm run dev       # start local dev server at http://localhost:4321
+npm run dev       # start local dev server — open http://localhost:4321/John-Morris-Website-/
 npm run build     # type-check + build the static site to dist/
 npm run preview   # preview the production build locally
 ```
 
 Requires Node 18.20.8+ / 20.3.0+ / 22+.
+
+Note the `/John-Morris-Website-/` path segment — the site is configured (see `astro.config.mjs`) to run
+under that subpath so it works on GitHub Pages; visiting bare `localhost:4321` will 404.
+
+## Deployment (GitHub Pages)
+
+The site auto-deploys via `.github/workflows/deploy.yml` on every push to
+`claude/website-creation-0is8ji`, or on demand via the "Run workflow" button under the Actions tab.
+
+**One-time setup required:** in the repo's **Settings → Pages**, set **Source** to **GitHub Actions**.
+Until that's done, the workflow will build successfully but the deploy step will fail with a "Pages site
+not found" style error.
+
+Once enabled, the live site will be at:
+
+```
+https://morrisjj1988-commits.github.io/John-Morris-Website-/
+```
+
+### Moving to a custom domain later
+
+When a real domain (e.g. `cllrjohnmorris.co.uk`) is ready:
+
+1. Update `site` in `astro.config.mjs` to the new domain and remove the `base` option entirely
+   (a custom domain serves from the root, so the base-path helper is no longer needed).
+2. Update `public/robots.txt`'s `Sitemap:` line to match.
+3. Add a `public/CNAME` file containing the domain name.
+4. Configure the custom domain in **Settings → Pages**, and set up the DNS records GitHub provides.
 
 ## Project structure
 

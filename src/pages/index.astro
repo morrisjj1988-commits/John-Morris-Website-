@@ -5,6 +5,7 @@ import NewsCard from '../components/NewsCard.astro';
 import Newsletter from '../components/Newsletter.astro';
 import PlaceholderPhoto from '../components/PlaceholderPhoto.astro';
 import { helpCategories } from '../lib/site';
+import { withBase } from '../lib/url';
 import { getCollection } from 'astro:content';
 
 const allPosts = await getCollection('news', ({ data }) => !data.draft);
@@ -30,7 +31,7 @@ const latestPosts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.
           gets its fair share from the council."
         </blockquote>
         <p class="quote-attribution">— John Morris, Councillor for Canning Town South</p>
-        <a class="btn btn-outline-dark" href="/about/">More about John</a>
+        <a class="btn btn-outline-dark" href={withBase('/about/')}>More about John</a>
       </div>
     </div>
   </section>
@@ -56,7 +57,7 @@ const latestPosts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.
       </div>
 
       <div class="center help-cta">
-        <a class="btn btn-primary" href="/find-help/">See how I can help &rarr;</a>
+        <a class="btn btn-primary" href={withBase('/find-help/')}>See how I can help &rarr;</a>
       </div>
     </div>
   </section>
@@ -82,7 +83,7 @@ const latestPosts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.
       </div>
 
       <div class="center help-cta">
-        <a class="btn btn-secondary news-all-link" href="/news/">See all news &rarr;</a>
+        <a class="btn btn-secondary news-all-link" href={withBase('/news/')}>See all news &rarr;</a>
       </div>
     </div>
   </section>

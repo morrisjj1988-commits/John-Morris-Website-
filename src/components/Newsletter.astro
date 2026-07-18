@@ -1,4 +1,6 @@
 ---
+import { withBase } from '../lib/url';
+
 interface Props {
   compact?: boolean;
 }
@@ -25,7 +27,7 @@ const { compact = false } = Astro.props;
       <input id="newsletter-consent" name="consent" type="checkbox" required />
       <label for="newsletter-consent">
         I'd like to receive email updates from Cllr John Morris and agree to the{' '}
-        <a href="/legal/privacy-policy/">Privacy Policy</a>. You can unsubscribe at any time.
+        <a href={withBase('/legal/privacy-policy/')}>Privacy Policy</a>. You can unsubscribe at any time.
       </label>
     </div>
 

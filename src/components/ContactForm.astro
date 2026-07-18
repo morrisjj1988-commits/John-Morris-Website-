@@ -3,6 +3,8 @@
 // on submit this shows an inline confirmation rather than actually sending
 // data anywhere. Swap the <form> action/method for a real form backend
 // (e.g. Formspree, Netlify Forms) before launch.
+import { withBase } from '../lib/url';
+
 interface Props {
   variant?: 'casework' | 'general';
   formId?: string;
@@ -65,7 +67,7 @@ const issueTypes = [
     <input id={`${formId}-consent`} name="consent" type="checkbox" required />
     <label for={`${formId}-consent`}>
       I consent to Cllr Morris's office storing my details in order to respond to this enquiry, in line with the{' '}
-      <a href="/legal/privacy-policy/">Privacy Policy</a>.
+      <a href={withBase('/legal/privacy-policy/')}>Privacy Policy</a>.
     </label>
   </div>
 

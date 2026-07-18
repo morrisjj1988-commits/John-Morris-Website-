@@ -1,5 +1,6 @@
 ---
 import PlaceholderPhoto from './PlaceholderPhoto.astro';
+import { withBase } from '../lib/url';
 
 interface Props {
   slug: string;
@@ -25,10 +26,12 @@ const formattedDate = date.toLocaleDateString('en-GB', {
   month: 'long',
   year: 'numeric',
 });
+
+const postHref = withBase(`/news/${slug}/`);
 ---
 
 <article class="news-card card">
-  <a href={`/news/${slug}/`} class="news-card__image-link" tabindex="-1" aria-hidden="true">
+  <a href={postHref} class="news-card__image-link" tabindex="-1" aria-hidden="true">
     <PlaceholderPhoto label={imageAlt} tone={toneByCategory[category] ?? 'navy'} ratio="16 / 10" />
   </a>
   <div class="news-card__body">
@@ -37,9 +40,9 @@ const formattedDate = date.toLocaleDateString('en-GB', {
       <span aria-hidden="true">&middot;</span>
       <time datetime={date.toISOString()}>{formattedDate}</time>
     </p>
-    <h3><a href={`/news/${slug}/`}>{title}</a></h3>
+    <h3><a href={postHref}>{title}</a></h3>
     <p class="text-muted">{excerpt}</p>
-    <a class="news-card__link" href={`/news/${slug}/`}>Read more &rarr;</a>
+    <a class="news-card__link" href={postHref}>Read more &rarr;</a>
   </div>
 </article>
 
