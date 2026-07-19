@@ -1,6 +1,8 @@
 ---
 import PlaceholderPhoto from './PlaceholderPhoto.astro';
+import SitePhoto from './SitePhoto.astro';
 import { withBase } from '../lib/url';
+import { getNewsImage } from '../lib/newsImages';
 
 interface Props {
   slug: string;
@@ -28,11 +30,16 @@ const formattedDate = date.toLocaleDateString('en-GB', {
 });
 
 const postHref = withBase(`/news/${slug}/`);
+const realImage = getNewsImage(slug);
 ---
 
 <article class="news-card card">
   <a href={postHref} class="news-card__image-link" tabindex="-1" aria-hidden="true">
-    <PlaceholderPhoto label={imageAlt} tone={toneByCategory[category] ?? 'navy'} ratio="16 / 10" />
+    {realImage ? (
+      <SitePhoto image={realImage} alt={imageAlt} ratio="16 / 10" class="news-card__photo" />
+    ) : (
+      <PlaceholderPhoto label={imageAlt} tone={toneByCategory[category] ?? 'navy'} ratio="16 / 10" />
+    )}
   </a>
   <div class="news-card__body">
     <p class="news-card__meta">
@@ -55,6 +62,15 @@ const postHref = withBase(`/news/${slug}/`);
 
   .news-card__image-link {
     display: block;
+  }
+
+  .news-card__image-link :global(.news-card__photo) {
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .news-card__image-link :global(.news-card__photo img) {
+    object-position: center 20%;
   }
 
   .news-card__body {

@@ -41,7 +41,7 @@ const categories = ['All', ...Array.from(new Set(allPosts.map((post) => post.dat
             ))}
           </div>
 
-          <div class="grid grid-3" id="news-grid">
+          <div class="grid grid-3 grid-sparse" id="news-grid">
             {allPosts.map((post) => (
               <div class="news-grid-item" data-category={post.data.category}>
                 <NewsCard

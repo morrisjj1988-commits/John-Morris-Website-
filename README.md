@@ -75,8 +75,10 @@ public/            Static assets (favicon, robots.txt, placeholder images)
 4. To add a new category, extend the `category` enum in `src/content.config.ts` and add a matching
    entry to `toneByCategory` in `src/components/NewsCard.astro` if you want a distinct accent colour.
 
-Real photography can replace the `PlaceholderPhoto` component in `NewsCard.astro` and `news/[slug].astro`
-with a normal `<img>` tag once photos are available — keep the `imageAlt` field as the `alt` text.
+**Adding a real photo to a post:** drop an image file at `src/assets/images/news/<slug>.jpg` (same
+filename as the post, `.jpg`/`.jpeg`/`.png`/`.webp` all work) — it's picked up automatically by both the
+news card and the post page, replacing the placeholder graphic. No code changes needed; this is handled by
+`src/lib/newsImages.ts`. Keep the `imageAlt` field in the post's frontmatter as the photo's `alt` text.
 
 ## Updating social links
 

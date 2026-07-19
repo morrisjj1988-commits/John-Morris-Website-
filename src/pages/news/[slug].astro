@@ -1,9 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PlaceholderPhoto from '../../components/PlaceholderPhoto.astro';
+import SitePhoto from '../../components/SitePhoto.astro';
 import NewsCard from '../../components/NewsCard.astro';
 import { getCollection, render } from 'astro:content';
 import { withBase } from '../../lib/url';
+import { getNewsImage } from '../../lib/newsImages';
 
 export async function getStaticPaths() {
   const posts = await getCollection('news', ({ data }) => !data.draft);
@@ -26,6 +28,8 @@ const formattedDate = post.data.date.toLocaleDateString('en-GB', {
   month: 'long',
   year: 'numeric',
 });
+
+const realImage = getNewsImage(post.id);
 ---
 
 <BaseLayout title={post.data.title} description={post.data.excerpt}>
@@ -40,7 +44,11 @@ const formattedDate = post.data.date.toLocaleDateString('en-GB', {
       <h1>{post.data.title}</h1>
 
       <div class="post__hero">
-        <PlaceholderPhoto label={post.data.imageAlt} tone="navy" ratio="16 / 9" />
+        {realImage ? (
+          <SitePhoto image={realImage} alt={post.data.imageAlt} ratio="16 / 9" priority />
+        ) : (
+          <PlaceholderPhoto label={post.data.imageAlt} tone="navy" ratio="16 / 9" />
+        )}
       </div>
 
       <div class="prose">

@@ -180,6 +180,13 @@ textarea:focus-visible,
 .grid-2 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
 .grid-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 
+/* For grids whose item count varies (e.g. news posts) — caps track width
+   and centers so 1-2 items don't stretch to fill the whole row. */
+.grid-sparse {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 24rem));
+  justify-content: center;
+}
+
 /* ---------------------------------------------------------------
    Buttons
    --------------------------------------------------------------- */
