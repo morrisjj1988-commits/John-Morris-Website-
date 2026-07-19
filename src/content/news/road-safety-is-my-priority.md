@@ -22,6 +22,12 @@ We don't have to look far to see the consequences of speed on our roads. Newham 
 
 This is why I've written to the Deputy Mayor for Policing and Crime, copying in the Deputy Mayor for Transport, Seb Dance, to formally request that speed enforcement cameras be installed on Silvertown Way and Peto Street North. I've asked the Mayor's Office for Policing and Crime, Transport for London and the Metropolitan Police to treat this as a priority, not a someday-maybe item on a long list.
 
+**Read my letter in full:**
+
+![Page 1 of the letter to Deputy Mayor Kaya Comer-Schwartz requesting speed cameras on Silvertown Way and Peto Street North](./road-safety-is-my-priority-letter-page-1.jpg)
+
+![Page 2 of the letter, asking for a substantive response on timescale and proposing a joint site visit with TfL, the Met and Newham Council](./road-safety-is-my-priority-letter-page-2.jpg)
+
 Enforcement cameras aren't a silver bullet, but they are one of the most direct, proven ways we know of to bring vehicle speeds down and prevent the kind of tragedies that speed causes. Vision Zero Action Plan 2 sets out 43 actions to reduce road danger across London, backed by the Mayor's commitment to eliminate deaths and serious injuries on our roads by 2041, with a 70% reduction by 2030. Safer speed limits, better enforcement technology, a new London Road Danger Reduction Team, it's all there on paper. What I'm asking for is simple: let's turn one small part of that ambition into something real, on a road where residents have been asking for it for years.
 
 I've also asked for something more concrete than a warm response and a promise to "look into it." I want a clear answer on what action can be taken and on what timescale, and I've proposed a site visit or a joint meeting between TfL, the Met's Roads and Transport Policing Command, and Newham Council officers, so we can actually move this forward rather than let it sit in an inbox.
