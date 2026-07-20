@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { site } from '../../../lib/site';
+import { withBase } from '../../../lib/url';
 ---
 
 <BaseLayout
@@ -56,6 +57,16 @@ import { site } from '../../../lib/site';
         <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">Formspree</a>,
         a third-party form service, in order to deliver your message or sign-up to Cllr Morris's office by
         email.
+      </p>
+      <p>
+        If you consent via the cookie banner, this site also uses{' '}
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
+          Google Analytics
+        </a>{' '}
+        to understand site usage — such as which pages are viewed and roughly where visitors come from. This
+        only runs if you accept, gives us aggregated, anonymised statistics rather than data tied to you
+        individually, and can be switched off at any time from the{' '}
+        <a href={withBase('/legal/cookie-policy/')}>Cookie Policy</a> page.
       </p>
     </div>
   </section>

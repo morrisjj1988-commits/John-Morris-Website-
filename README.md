@@ -49,6 +49,29 @@ The Find Help casework form and the newsletter sign-up are still unwired (workin
 either of the above patterns to `ContactForm.astro`'s casework instance or `Newsletter.astro` to connect
 them the same way.
 
+## Analytics
+
+The site can report page views per page/article, aggregate visitor location (country/city, not individual
+IP addresses — Google Analytics never exposes raw IPs to site owners), and traffic source (search, social,
+referral, direct) via Google Analytics 4.
+
+**Currently disabled.** `site.googleAnalyticsId` in `src/lib/site.ts` is blank, so no tracking script or
+cookie banner renders at all — nothing loads until this is set.
+
+**To enable:**
+
+1. Create a GA4 property at [analytics.google.com](https://analytics.google.com) and copy its Measurement ID
+   (`G-XXXXXXXXXX`).
+2. Set `googleAnalyticsId` in `src/lib/site.ts` to that ID.
+3. Rebuild and deploy. A cookie consent banner (`CookieConsent.astro`) will now appear on first visit — GA
+   only loads if a visitor clicks "Accept"; "Reject" (or no choice) means nothing loads. This is required
+   under UK PECR since GA sets cookies.
+4. View reports at analytics.google.com — realtime and historical data only starts accumulating from when
+   the script goes live; there's no way to backfill past visits.
+
+The Cookie Policy and Privacy Policy pages already describe this behaviour and link to Google's own privacy
+policy, so no further legal-copy changes are needed when you turn it on.
+
 ## Project structure
 
 ```

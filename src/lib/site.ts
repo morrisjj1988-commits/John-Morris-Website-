@@ -16,6 +16,11 @@ export const site = {
   // Confirmed imprint wording — pending final check on promoter name (see README).
   imprint: 'Promoted by John Morris on behalf of John Morris, both at The Trinity Centre, East Avenue, E12 6SG.',
   newhamProfileUrl: 'https://mgov.newham.gov.uk/mgUserInfo.aspx?UID=5657',
+  // Google Analytics 4 Measurement ID (e.g. "G-XXXXXXXXXX"). Leave blank to
+  // disable analytics entirely — no tracking script or cookie banner will
+  // render until this is set. Create a GA4 property at analytics.google.com
+  // to get one; see README for setup notes.
+  googleAnalyticsId: '',
 };
 
 export type NavLink = { label: string; href: string };

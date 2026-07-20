@@ -1,0 +1,113 @@
+---
+import { site } from '../lib/site';
+import { withBase } from '../lib/url';
+
+const { googleAnalyticsId } = site;
+---
+
+{googleAnalyticsId && (
+  <div id="cookie-consent" class="cookie-consent" role="dialog" aria-live="polite" aria-label="Cookie consent" hidden>
+    <div class="cookie-consent__inner">
+      <p>
+        We'd like to use Google Analytics to see which pages are useful and where visitors come from. This sets
+        cookies and only runs if you agree. See our{' '}
+        <a href={withBase('/legal/cookie-policy/')}>Cookie Policy</a> for details.
+      </p>
+      <div class="cookie-consent__actions">
+        <button type="button" class="btn btn-secondary" data-cookie-reject>Reject</button>
+        <button type="button" class="btn btn-primary" data-cookie-accept>Accept</button>
+      </div>
+    </div>
+  </div>
+
+  <script define:vars={{ googleAnalyticsId }}>
+    const STORAGE_KEY = 'cookie-consent';
+
+    function loadAnalytics(id) {
+      if (window.__gaLoaded) return;
+      window.__gaLoaded = true;
+
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${id}`;
+      document.head.appendChild(script);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        window.dataLayer.push(arguments);
+      }
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', id);
+    }
+
+    function initConsent() {
+      const banner = document.getElementById('cookie-consent');
+      if (!banner) return;
+
+      const stored = localStorage.getItem(STORAGE_KEY);
+
+      if (stored === 'accepted') {
+        loadAnalytics(googleAnalyticsId);
+        return;
+      }
+
+      if (stored === 'rejected') {
+        return;
+      }
+
+      banner.hidden = false;
+
+      banner.querySelector('[data-cookie-accept]')?.addEventListener('click', () => {
+        localStorage.setItem(STORAGE_KEY, 'accepted');
+        banner.hidden = true;
+        loadAnalytics(googleAnalyticsId);
+      });
+
+      banner.querySelector('[data-cookie-reject]')?.addEventListener('click', () => {
+        localStorage.setItem(STORAGE_KEY, 'rejected');
+        banner.hidden = true;
+      });
+    }
+
+    initConsent();
+  </script>
+)}
+
+<style>
+  .cookie-consent {
+    position: fixed;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 100;
+    max-width: 40rem;
+    margin-inline: auto;
+    background: var(--color-navy-900);
+    color: #fff;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+    padding: 1.25rem 1.5rem;
+  }
+
+  .cookie-consent__inner p {
+    margin: 0 0 1rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .cookie-consent__inner a {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  .cookie-consent__actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .cookie-consent .btn-secondary {
+    color: #fff;
+  }
+</style>
