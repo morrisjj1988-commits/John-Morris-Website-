@@ -1,11 +1,13 @@
 ---
 import { withBase } from '../lib/url';
+import { site } from '../lib/site';
 
 interface Props {
   compact?: boolean;
+  formspreeEndpoint?: string;
 }
 
-const { compact = false } = Astro.props;
+const { compact = false, formspreeEndpoint } = Astro.props;
 ---
 
 <div class:list={['newsletter card', { 'newsletter--compact': compact }]}>
@@ -17,7 +19,14 @@ const { compact = false } = Astro.props;
     </p>
   </div>
 
-  <form class="newsletter__form" data-newsletter-form novalidate>
+  <form
+    class="newsletter__form"
+    data-newsletter-form
+    novalidate
+    {...formspreeEndpoint
+      ? { method: 'POST', action: formspreeEndpoint, 'data-formspree-endpoint': formspreeEndpoint }
+      : {}}
+  >
     <div class="form-field newsletter__email-field">
       <label for="newsletter-email">Email address</label>
       <input id="newsletter-email" name="email" type="email" autocomplete="email" required />
@@ -34,20 +43,59 @@ const { compact = false } = Astro.props;
     <button type="submit" class="btn btn-primary">Sign up</button>
 
     <p class="form-note" role="status" aria-live="polite" data-newsletter-status hidden>
-      Thanks for signing up! (This is a working preview — connect it to a mailing list provider before launch.)
+      {formspreeEndpoint
+        ? "Thanks for signing up!"
+        : 'Thanks for signing up! (This is a working preview — connect it to a mailing list provider before launch.)'}
     </p>
+    {formspreeEndpoint && (
+      <p class="form-note" role="alert" aria-live="assertive" data-newsletter-error hidden>
+        Sorry, something went wrong signing you up. Please try again, or email {' '}
+        <a href={`mailto:${site.email}`}>{site.email}</a> directly.
+      </p>
+    )}
   </form>
 </div>
 
 <script>
   document.querySelectorAll<HTMLFormElement>('[data-newsletter-form]').forEach((form) => {
     form.addEventListener('submit', (event) => {
-      event.preventDefault();
       if (!form.checkValidity()) {
+        event.preventDefault();
         form.reportValidity();
         return;
       }
+
+      const endpoint = form.dataset.formspreeEndpoint;
       const status = form.querySelector<HTMLElement>('[data-newsletter-status]');
+      const errorNote = form.querySelector<HTMLElement>('[data-newsletter-error]');
+
+      if (endpoint) {
+        event.preventDefault();
+        if (errorNote) errorNote.hidden = true;
+
+        const submitButton = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+        if (submitButton) submitButton.disabled = true;
+
+        fetch(endpoint, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        })
+          .then((response) => {
+            if (!response.ok) throw new Error('Newsletter sign-up failed');
+            if (status) status.hidden = false;
+            form.reset();
+          })
+          .catch(() => {
+            if (errorNote) errorNote.hidden = false;
+          })
+          .finally(() => {
+            if (submitButton) submitButton.disabled = false;
+          });
+        return;
+      }
+
+      event.preventDefault();
       if (status) {
         status.hidden = false;
       }
