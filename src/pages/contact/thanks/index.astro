@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { withBase } from '../../../lib/url';
+---
+
+<BaseLayout
+  title="Message sent"
+  description="Thanks for getting in touch with Cllr John Morris."
+  noindex={true}
+>
+  <section class="section thanks">
+    <div class="container center">
+      <p class="eyebrow">Thank you</p>
+      <h1>Your message has been sent</h1>
+      <p class="text-muted">
+        Thanks for getting in touch — I'll aim to get back to you as soon as I can.
+      </p>
+      <a class="btn btn-primary" href={withBase('/')}>Back to homepage</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .thanks {
+    padding-block: 6rem;
+  }
+</style>

@@ -1,16 +1,25 @@
 ---
-// Static-site placeholder form. No backend is wired up yet (see README) —
-// on submit this shows an inline confirmation rather than actually sending
-// data anywhere. Swap the <form> action/method for a real form backend
-// (e.g. Formspree, Netlify Forms) before launch.
+// Static-site form. By default this is a placeholder — on submit it shows
+// an inline confirmation rather than actually sending data anywhere (see
+// README). Pass `netlify` + a unique `netlifyFormName` to wire this
+// specific instance up to Netlify Forms instead — requires the site to
+// actually be deployed via Netlify (not GitHub Pages) for submissions to
+// be received.
 import { withBase } from '../lib/url';
 
 interface Props {
   variant?: 'casework' | 'general';
   formId?: string;
+  netlify?: boolean;
+  netlifyFormName?: string;
 }
 
-const { variant = 'general', formId = 'contact-form' } = Astro.props;
+const {
+  variant = 'general',
+  formId = 'contact-form',
+  netlify = false,
+  netlifyFormName = 'contact',
+} = Astro.props;
 
 const issueTypes = [
   'Housing',
@@ -22,7 +31,31 @@ const issueTypes = [
 ];
 ---
 
-<form id={formId} class="contact-form" data-contact-form novalidate>
+<form
+  id={formId}
+  class="contact-form"
+  data-contact-form
+  novalidate
+  {...netlify
+    ? {
+        name: netlifyFormName,
+        method: 'POST',
+        'data-netlify': 'true',
+        'data-netlify-honeypot': 'bot-field',
+        action: withBase('/contact/thanks/'),
+      }
+    : {}}
+>
+  {netlify && (
+    <>
+      <input type="hidden" name="form-name" value={netlifyFormName} />
+      <p style="display:none;" aria-hidden="true">
+        <label>
+          Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off" />
+        </label>
+      </p>
+    </>
+  )}
   <div class="form-row">
     <div class="form-field">
       <label for={`${formId}-name`}>Full name</label>
@@ -73,19 +106,29 @@ const issueTypes = [
 
   <button type="submit" class="btn btn-primary">Send message</button>
 
-  <p class="form-note" role="status" aria-live="polite" data-form-status hidden>
-    Thanks — your message has been noted. This form is a working preview; connect it to a real inbox before launch (see README).
-  </p>
+  {!netlify && (
+    <p class="form-note" role="status" aria-live="polite" data-form-status hidden>
+      Thanks — your message has been noted. This form is a working preview; connect it to a real inbox before launch (see README).
+    </p>
+  )}
 </form>
 
 <script>
   document.querySelectorAll<HTMLFormElement>('[data-contact-form]').forEach((form) => {
     form.addEventListener('submit', (event) => {
-      event.preventDefault();
       if (!form.checkValidity()) {
+        event.preventDefault();
         form.reportValidity();
         return;
       }
+
+      // Netlify-wired forms submit for real (to Netlify's form-handling
+      // endpoint) — let the browser's normal POST + redirect happen.
+      if (form.hasAttribute('data-netlify')) {
+        return;
+      }
+
+      event.preventDefault();
       const status = form.querySelector<HTMLElement>('[data-form-status]');
       if (status) {
         status.hidden = false;

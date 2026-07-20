@@ -25,6 +25,29 @@ domain was set up, the site ran at `https://morrisjj1988-commits.github.io/John-
 domain or DNS ever needs redoing, that fallback URL still works as long as `astro.config.mjs`'s `base`
 option isn't reintroduced.
 
+## Forms (Netlify)
+
+The Contact page's "Get in touch" form (`src/pages/contact/index.astro`) is wired up to
+[Netlify Forms](https://docs.netlify.com/manage/forms/setup/) — no separate form backend account needed,
+submissions arrive in the Netlify dashboard for whichever Netlify site builds this repo, with optional
+email notifications (configurable in that site's **Forms → Settings and usage** in Netlify).
+
+**Important — this only works on a site actually built and served by Netlify.** Netlify Forms isn't a
+generic API you can POST to from anywhere; Netlify's own build process has to detect the `<form
+data-netlify="true">` in the HTML at deploy time. Right now the *live* site (`johnmorris.uk`) is served by
+GitHub Pages, not Netlify — so until/unless the domain is pointed at a Netlify deployment of this repo
+instead, form submissions will only be captured on that Netlify site's own `*.netlify.app` preview URL, not
+on the live `johnmorris.uk` site.
+
+To make the live form actually work, either:
+1. Move hosting to Netlify entirely (point `johnmorris.uk`'s DNS at Netlify instead of GitHub Pages,
+   disable/ignore the GitHub Actions Pages workflow), or
+2. Keep GitHub Pages as the live host and use a form backend that works from anywhere (e.g. Formspree)
+   instead of Netlify Forms for the live site.
+
+The same `netlify`/`netlifyFormName` props on `ContactForm.astro` can be applied to the Find Help casework
+form too, once a decision is made on where the live site is hosted.
+
 ## Project structure
 
 ```
@@ -117,10 +140,10 @@ real content:
   confirm official party branding with the client if applicable.
 - **Newham Council profile link** — `site.newhamProfileUrl` in `src/lib/site.ts` should point to John's real
   council.newham.gov.uk profile page once known.
-- **Forms** — the contact and casework enquiry forms, and the newsletter sign-up, currently show an inline
-  confirmation on submit but don't send data anywhere (see comments in `ContactForm.astro` and
-  `Newsletter.astro`). Wire these up to a real form backend (e.g. Formspree, Netlify Forms) or mailing list
-  provider (e.g. Mailchimp) before launch.
+- **Forms** — the Contact page's "Get in touch" form is wired up to **Netlify Forms** (see below). The
+  Find Help casework enquiry form and the newsletter sign-up still just show an inline confirmation on
+  submit without sending data anywhere (see comments in `ContactForm.astro` and `Newsletter.astro`) — wire
+  these up the same way, or to a different backend/mailing list provider, before launch.
 - **Legal pages** — `privacy-policy`, `cookie-policy`, and `terms-of-use` are drafted starting points and
   are marked `noindex` until reviewed; they should be checked (ideally by someone with a data protection
   background) before launch, and un-flagged as noindex once approved.
