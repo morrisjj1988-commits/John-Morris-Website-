@@ -1,17 +1,21 @@
 ---
 // Static-site form. By default this is a placeholder — on submit it shows
 // an inline confirmation rather than actually sending data anywhere (see
-// README). Pass `netlify` + a unique `netlifyFormName` to wire this
-// specific instance up to Netlify Forms instead — requires the site to
-// actually be deployed via Netlify (not GitHub Pages) for submissions to
-// be received.
+// README). Two ways to wire a specific instance up for real:
+// - `netlify` + a unique `netlifyFormName`: uses Netlify Forms — requires
+//   the site to actually be deployed via Netlify (not GitHub Pages).
+// - `formspreeEndpoint`: submits via fetch() to a Formspree form endpoint
+//   (https://formspree.io/f/xxxxxxxx) — works from any host, since it's a
+//   plain API call rather than something tied to the hosting platform.
 import { withBase } from '../lib/url';
+import { site } from '../lib/site';
 
 interface Props {
   variant?: 'casework' | 'general';
   formId?: string;
   netlify?: boolean;
   netlifyFormName?: string;
+  formspreeEndpoint?: string;
 }
 
 const {
@@ -19,7 +23,10 @@ const {
   formId = 'contact-form',
   netlify = false,
   netlifyFormName = 'contact',
+  formspreeEndpoint,
 } = Astro.props;
+
+const isWired = netlify || Boolean(formspreeEndpoint);
 
 const issueTypes = [
   'Housing',
@@ -44,7 +51,9 @@ const issueTypes = [
         'data-netlify-honeypot': 'bot-field',
         action: withBase('/contact/thanks/'),
       }
-    : {}}
+    : formspreeEndpoint
+      ? { method: 'POST', action: formspreeEndpoint, 'data-formspree-endpoint': formspreeEndpoint }
+      : {}}
 >
   {netlify && (
     <>
@@ -108,7 +117,15 @@ const issueTypes = [
 
   {!netlify && (
     <p class="form-note" role="status" aria-live="polite" data-form-status hidden>
-      Thanks — your message has been noted. This form is a working preview; connect it to a real inbox before launch (see README).
+      {isWired
+        ? 'Thanks — your message has been sent.'
+        : "Thanks — your message has been noted. This form is a working preview; connect it to a real inbox before launch (see README)."}
+    </p>
+  )}
+  {formspreeEndpoint && (
+    <p class="form-note" role="alert" aria-live="assertive" data-form-error hidden>
+      Sorry, something went wrong sending your message. Please try again, or email {' '}
+      <a href={`mailto:${site.email}`}>{site.email}</a> directly.
     </p>
   )}
 </form>
@@ -128,8 +145,37 @@ const issueTypes = [
         return;
       }
 
-      event.preventDefault();
+      const endpoint = form.dataset.formspreeEndpoint;
       const status = form.querySelector<HTMLElement>('[data-form-status]');
+      const errorNote = form.querySelector<HTMLElement>('[data-form-error]');
+
+      if (endpoint) {
+        event.preventDefault();
+        if (errorNote) errorNote.hidden = true;
+
+        const submitButton = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+        if (submitButton) submitButton.disabled = true;
+
+        fetch(endpoint, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        })
+          .then((response) => {
+            if (!response.ok) throw new Error('Form submission failed');
+            if (status) status.hidden = false;
+            form.reset();
+          })
+          .catch(() => {
+            if (errorNote) errorNote.hidden = false;
+          })
+          .finally(() => {
+            if (submitButton) submitButton.disabled = false;
+          });
+        return;
+      }
+
+      event.preventDefault();
       if (status) {
         status.hidden = false;
       }

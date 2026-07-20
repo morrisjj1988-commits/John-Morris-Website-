@@ -24,7 +24,11 @@ import { site } from '../../lib/site';
     <div class="container contact-grid">
       <div class="card form-card">
         <h2>Send a message</h2>
-        <ContactForm variant="general" formId="contact-page-form" netlify netlifyFormName="contact" />
+        <ContactForm
+          variant="general"
+          formId="contact-page-form"
+          formspreeEndpoint="https://formspree.io/f/xvzeraej"
+        />
       </div>
 
       <div class="contact-details">
