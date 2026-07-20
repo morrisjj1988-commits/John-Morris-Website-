@@ -1,11 +1,10 @@
 export const site = {
   name: 'Cllr John Morris',
-  // Party affiliation to be confirmed with client before launch — kept neutral for now.
-  role: 'Local Councillor for Canning Town South',
+  role: 'Labour Councillor for Canning Town South',
   council: 'London Borough of Newham',
   ward: 'Canning Town South',
   url: 'https://johnmorris.uk',
-  // Placeholder contact details — replace with real details before launch.
+  // Placeholder contact details — replace with real details once confirmed (see README).
   email: 'john.morris@newham.gov.uk',
   phone: '020 7000 0000',
   officeAddress: 'Newham Dockside, 1000 Dockside Road, London E16 2QU',
@@ -14,9 +13,9 @@ export const site = {
     location: 'Canning Town South Ward Surgery — venue to be confirmed',
     note: 'Surgery details are provisional. No appointment needed — drop in, or contact Cllr Morris to arrange a convenient time.',
   },
-  // Required for UK political communications — wording must be confirmed with client before launch.
-  imprint: 'Promoted by John Morris on behalf of John Morris, both of Newham Dockside, 1000 Dockside Road, London E16 2QU.',
-  newhamProfileUrl: 'https://mgov.newham.gov.uk/mgMemberIndex.aspx',
+  // Confirmed imprint wording — pending final check on promoter name (see README).
+  imprint: 'Promoted by John Morris on behalf of John Morris, both at The Trinity Centre, East Avenue, E12 6SG.',
+  newhamProfileUrl: 'https://mgov.newham.gov.uk/mgUserInfo.aspx?UID=5657',
 };
 
 export type NavLink = { label: string; href: string };

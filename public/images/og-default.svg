@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#1f3a63"/>
-      <stop offset="100%" stop-color="#0f1f38"/>
+      <stop offset="0%" stop-color="#5c1a22"/>
+      <stop offset="100%" stop-color="#161513"/>
     </linearGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
-  <circle cx="1040" cy="120" r="220" fill="#c8202f" opacity="0.18"/>
+  <circle cx="1040" cy="120" r="220" fill="#e4003b" opacity="0.18"/>
   <text x="90" y="300" font-family="Georgia, 'Times New Roman', serif" font-size="72" fill="#ffffff" font-weight="700">Cllr John Morris</text>
   <text x="90" y="365" font-family="Arial, sans-serif" font-size="34" fill="#e8a33d" font-weight="600">Canning Town South &#8226; Newham Council</text>
-  <text x="90" y="440" font-family="Arial, sans-serif" font-size="28" fill="#dbe3ee">Working hard for Canning Town South</text>
+  <text x="90" y="440" font-family="Arial, sans-serif" font-size="28" fill="#e8e3e0">Working hard for Canning Town South</text>
 </svg>

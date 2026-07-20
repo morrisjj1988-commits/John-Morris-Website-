@@ -6,17 +6,11 @@ import { site } from '../../../lib/site';
 <BaseLayout
   title="Privacy Policy"
   description="How Cllr John Morris's office collects, uses, and protects your personal data."
-  noindex={true}
 >
   <section class="section legal">
     <div class="container legal__inner prose">
       <p class="eyebrow">Legal</p>
       <h1>Privacy Policy</h1>
-      <p class="text-muted">
-        <em>Placeholder policy — this page is a starting template and must be reviewed by Cllr Morris (and, if
-        applicable, a data protection adviser) before the site goes live.</em>
-      </p>
-
       <h2>Who we are</h2>
       <p>
         This website is run on behalf of {site.name}, {site.role}, {site.council}. For any questions about this
@@ -39,8 +33,7 @@ import { site } from '../../../lib/site';
       <h2>How long we keep it</h2>
       <p>
         We keep casework correspondence for as long as reasonably necessary to resolve your issue and for a
-        reasonable period afterwards, in case the matter is reopened. <em>[Placeholder — confirm a specific
-        retention period.]</em>
+        reasonable period afterwards, in case the matter is reopened.
       </p>
 
       <h2>Your rights</h2>
@@ -58,8 +51,9 @@ import { site } from '../../../lib/site';
 
       <h2>Third parties</h2>
       <p>
-        We do not sell your personal data. <em>[Placeholder — list any third-party services used once selected,
-        e.g. a mailing list provider or form backend, along with links to their own privacy policies.]</em>
+        We do not sell your personal data. The "Get in touch" contact form on this site is processed by{' '}
+        <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">Formspree</a>,
+        a third-party form service, in order to deliver your message to Cllr Morris's office by email.
       </p>
     </div>
   </section>
