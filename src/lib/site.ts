@@ -22,9 +22,9 @@ export type NavLink = { label: string; href: string };
 
 export const primaryNav: NavLink[] = [
   { label: 'Home', href: '/' },
-  { label: 'Find Help', href: '/find-help/' },
-  { label: 'News', href: '/news/' },
   { label: 'About', href: '/about/' },
+  { label: 'News', href: '/news/' },
+  { label: 'Find Help', href: '/find-help/' },
   { label: 'Contact', href: '/contact/' },
 ];
 
