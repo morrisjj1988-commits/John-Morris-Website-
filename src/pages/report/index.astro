@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ReportGrid from '../../components/ReportGrid.astro';
+import { withBase } from '../../lib/url';
+---
+
+<BaseLayout
+  title="Report It"
+  description="An A-Z of Newham Council services for reporting problems — from abandoned vehicles to tree management — with direct links to the council's own reporting forms."
+>
+  <section class="section page-intro">
+    <div class="container page-intro__inner">
+      <p class="eyebrow">Report it</p>
+      <h1>Report a problem to Newham Council</h1>
+      <p class="text-muted">
+        Lots of issues — potholes, missed bins, fly-tipping, noise, and more — are best reported straight to
+        Newham Council, who handle these services directly. Use the A-Z below to jump straight to the right
+        council form. Each button takes you to the council's own website to submit your report.
+      </p>
+      <p class="text-muted report-note">
+        If you'd rather raise something with me directly, or a council report isn't getting anywhere, you can{' '}
+        <a href={withBase('/find-help/')}>get in touch and I'll look into it</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <ReportGrid />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-intro__inner {
+    max-width: 44rem;
+  }
+
+  .report-note {
+    margin-top: 1rem;
+  }
+</style>

@@ -1,0 +1,96 @@
+---
+import { Icon } from 'astro-icon/components';
+import { reportServices } from '../lib/site';
+---
+
+<div class="report-grid">
+  {reportServices.map((item) => (
+    <a
+      class="report-tile"
+      href={item.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`${item.label} — report this to Newham Council (opens in new tab)`}
+    >
+      <span class="report-tile__icon" aria-hidden="true">
+        <Icon name={item.icon} width={28} height={28} />
+      </span>
+      <span class="report-tile__body">
+        <span class="report-tile__label">{item.label}</span>
+        <span class="report-tile__desc">{item.description}</span>
+      </span>
+      <span class="report-tile__external" aria-hidden="true">
+        <Icon name="mdi:open-in-new" width={18} height={18} />
+      </span>
+    </a>
+  ))}
+</div>
+
+<style>
+  .report-grid {
+    display: grid;
+    gap: 1.1rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+
+  .report-tile {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+    padding: 1.25rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.12s ease, border-color 0.12s ease;
+  }
+
+  .report-tile:hover,
+  .report-tile:focus-visible {
+    transform: translateY(-2px);
+    border-color: var(--color-red-600);
+  }
+
+  .report-tile__icon {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    background: rgba(206, 17, 38, 0.1);
+    color: var(--color-red-600);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .report-tile__icon {
+      background: rgba(255, 255, 255, 0.08);
+    }
+  }
+
+  .report-tile__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex-grow: 1;
+  }
+
+  .report-tile__label {
+    font-weight: 700;
+    font-family: var(--font-heading);
+  }
+
+  .report-tile__desc {
+    font-size: 0.88rem;
+    color: var(--color-text-muted);
+  }
+
+  .report-tile__external {
+    flex-shrink: 0;
+    color: var(--color-text-muted);
+    margin-top: 0.2rem;
+  }
+</style>
