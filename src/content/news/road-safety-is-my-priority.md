@@ -1,7 +1,7 @@
 ---
 title: "Road Safety Is My Priority"
 date: 2026-07-19
-category: Transport
+category: Road Safety
 excerpt: "I've written to the Deputy Mayor for Policing and Crime, copying in the Deputy Mayor for Transport, to formally request speed enforcement cameras on Silvertown Way and Peto Street North."
 image: "/images/news/placeholder.svg"
 imageAlt: "Traffic moving along Silvertown Way, a residential street in Canning Town South"
