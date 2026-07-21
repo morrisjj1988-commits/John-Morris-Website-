@@ -6,7 +6,7 @@ const news = defineCollection({
   schema: z.object({
     title: z.string(),
     date: z.coerce.date(),
-    category: z.enum(['Housing', 'Community', 'Environment', 'Council', 'Transport', 'Road Safety']),
+    category: z.enum(['Housing', 'Community', 'Environment', 'Council', 'Transport', 'Road Safety', 'Canning Town']),
     excerpt: z.string(),
     image: z.string(),
     imageAlt: z.string(),
