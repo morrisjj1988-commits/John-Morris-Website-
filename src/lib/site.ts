@@ -20,7 +20,7 @@ export const site = {
   // disable analytics entirely — no tracking script or cookie banner will
   // render until this is set. Create a GA4 property at analytics.google.com
   // to get one; see README for setup notes.
-  googleAnalyticsId: '',
+  googleAnalyticsId: 'G-JJHJ6YZEQK',
 };
 
 export type NavLink = { label: string; href: string };
