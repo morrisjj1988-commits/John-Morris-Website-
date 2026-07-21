@@ -1,7 +1,7 @@
 ---
 title: "My First Speech to Full Council This Term"
 date: 2026-07-13
-category: Transport
+category: Road Safety
 excerpt: "After a run of serious road incidents across Newham, I used my first speech of the term to call on the council to back the Safe System approach and set its own Vision Zero target."
 image: "/images/news/placeholder.svg"
 imageAlt: "John Morris speaking at the podium during a council meeting"
