@@ -4,7 +4,7 @@ date: 2026-07-22
 category: Community
 excerpt: "This weekend, Royal Victoria Dock trades its usual waterside calm for two days of circus, dance, and street theatre as Ensemble Festival returns — free, all-ages, and running Saturday 25 and Sunday 26 July, 12:00-20:00."
 image: "/images/news/placeholder.svg"
-imageAlt: "Performers on an outdoor stage at Royal Victoria Dock during Ensemble Festival"
+imageAlt: "View across Royal Victoria Dock towards the IFS Cloud Cable Car and Canary Wharf skyline"
 draft: false
 ---
 
