@@ -4,6 +4,7 @@ import PlaceholderPhoto from '../../components/PlaceholderPhoto.astro';
 import SitePhoto from '../../components/SitePhoto.astro';
 import NewsCard from '../../components/NewsCard.astro';
 import { getCollection, render } from 'astro:content';
+import { getImage } from 'astro:assets';
 import { withBase } from '../../lib/url';
 import { getNewsImage } from '../../lib/newsImages';
 
@@ -30,9 +31,12 @@ const formattedDate = post.data.date.toLocaleDateString('en-GB', {
 });
 
 const realImage = getNewsImage(post.id);
+const ogImage = realImage
+  ? (await getImage({ src: realImage, width: 1200, format: 'jpeg' })).src
+  : undefined;
 ---
 
-<BaseLayout title={post.data.title} description={post.data.excerpt}>
+<BaseLayout title={post.data.title} description={post.data.excerpt} image={ogImage}>
   <article class="section post">
     <div class="container post__inner">
       <a class="back-link" href={withBase('/news/')}>&larr; Back to news</a>
