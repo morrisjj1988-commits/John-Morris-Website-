@@ -6,7 +6,7 @@ export const site = {
   url: 'https://johnmorris.uk',
   // Placeholder contact details — replace with real details once confirmed (see README).
   email: 'john.morris@newham.gov.uk',
-  phone: '020 7000 0000',
+  phone: '0203 373 2933',
   officeAddress: 'Newham Dockside, 1000 Dockside Road, London E16 2QU',
   surgery: {
     frequency: 'Third Saturday of every month, 10:00am–12:00pm',
