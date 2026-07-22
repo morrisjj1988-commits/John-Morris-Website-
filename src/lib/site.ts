@@ -29,8 +29,8 @@ export const primaryNav: NavLink[] = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about/' },
   { label: 'News', href: '/news/' },
-  { label: 'Find Help', href: '/find-help/' },
   { label: 'Report', href: '/report/' },
+  { label: 'Find Help', href: '/find-help/' },
   { label: 'Contact', href: '/contact/' },
 ];
 
