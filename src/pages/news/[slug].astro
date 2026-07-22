@@ -32,7 +32,7 @@ const formattedDate = post.data.date.toLocaleDateString('en-GB', {
 const realImage = getNewsImage(post.id);
 ---
 
-<BaseLayout title={post.data.title} description={post.data.excerpt}>
+<BaseLayout title={post.data.title} description={post.data.excerpt} image={realImage?.src}>
   <article class="section post">
     <div class="container post__inner">
       <a class="back-link" href={withBase('/news/')}>&larr; Back to news</a>
