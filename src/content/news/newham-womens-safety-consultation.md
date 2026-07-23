@@ -4,7 +4,7 @@ date: 2026-07-23
 category: Community
 excerpt: "Newham Council wants residents to have their say on new plans to make the borough safer for women and girls, as part of a wider two-year community safety strategy. Here's what's being proposed, and how to respond."
 image: "/images/news/placeholder.svg"
-imageAlt: "A quiet Newham street in the evening"
+imageAlt: "End Violence Against Women graphic, white arrows pointing to a purple card with the words End Violence Against Women on a teal background"
 draft: false
 ---
 
