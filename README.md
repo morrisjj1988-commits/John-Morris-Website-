@@ -172,8 +172,8 @@ real content:
 - **Legal pages** — `privacy-policy`, `cookie-policy`, and `terms-of-use` are drafted starting points and
   are marked `noindex` until reviewed; they should be checked (ideally by someone with a data protection
   background) before launch, and un-flagged as noindex once approved.
-- **OG image** — `public/images/og-default.svg` is a placeholder social-share image; consider replacing
-  with a JPG/PNG version, since some platforms don't render SVG Open Graph images.
+- **OG image** — `public/images/og-default.png` is the default social-share image (1200×630 PNG, rendered
+  from `public/images/og-default.svg`) so it previews reliably on Facebook, Twitter/X, and LinkedIn.
 
 ## SEO
 

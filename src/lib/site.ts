@@ -10,8 +10,8 @@ export const site = {
   officeAddress: 'Newham Dockside, 1000 Dockside Road, London E16 2QU',
   surgery: {
     frequency: 'Third Saturday of every month, 10:00am–12:00pm',
-    location: 'Canning Town South Ward Surgery — venue to be confirmed',
-    note: 'Surgery details are provisional. No appointment needed — drop in, or contact Cllr Morris to arrange a convenient time.',
+    location: 'Canning Town Library',
+    note: 'No appointment needed — drop in, or contact Cllr Morris to arrange a convenient time.',
   },
   // Confirmed imprint wording — pending final check on promoter name (see README).
   imprint: 'Promoted by John Morris on behalf of John Morris, both at The Trinity Centre, East Avenue, E12 6SG.',
