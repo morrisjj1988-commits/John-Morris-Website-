@@ -28,6 +28,10 @@ Cllr John Morris, in a letter dated 1 June 2026, framed the outage as more than 
 
 Cllr Dr Rohit Kumar Dasgupta went further, revealing that this is now the third time he has personally raised the issue with TfL and the Greater London Authority. In his letter, he expressed frustration that despite previous representations, the escalator remains out of service, calling the situation "unacceptable for a major transport interchange serving thousands of passengers each day." He warned that the continued delay is undermining public confidence in TfL's commitment to accessibility and public service in Canning Town.
 
+**Read Cllr Dasgupta's letter in full:**
+
+![Letter from Cllr Dr Rohit Kumar Dasgupta to Seb Dance, Deputy Mayor for Transport, raising the prolonged escalator outage at Canning Town Underground station for the third time](./canning-town-escalator-outage-tfl-pressure-dasgupta-letter.jpg)
+
 ## What They're Asking TfL to Provide
 
 Although worded slightly differently, both letters converge on the same core demands. Between them, the councillors are asking Seb Dance and TfL to provide:
