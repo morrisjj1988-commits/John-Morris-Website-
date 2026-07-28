@@ -4,7 +4,7 @@ date: 2026-07-28
 category: Canning Town
 excerpt: "New openings, soft launches, and a community meeting are all packed into a few busy days for Canning Town and Hallsville Quarter, with Holland & Barrett, MyKopitiam and Lumikha all landing around Silvertown Way."
 image: "/images/news/placeholder.svg"
-imageAlt: "Poster for Lumikha, a new Pan Asian cafe opening on Silvertown Way"
+imageAlt: "Aerial view of new residential towers and retail units along Silvertown Way in Canning Town"
 draft: false
 ---
 
