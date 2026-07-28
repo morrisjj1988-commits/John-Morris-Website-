@@ -1,0 +1,184 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PetitionForm from '../../components/PetitionForm.astro';
+import { withBase } from '../../lib/url';
+
+const issues = [
+  {
+    title: 'Peto Street North',
+    problem:
+      "Long, uninterrupted stretches with little to physically slow traffic down. Residents describe vehicles moving at speeds distinctly at odds with a quiet residential street.",
+    ask: 'An engineering solution from Newham Council — such as speed humps, chicanes, or road narrowing.',
+    askOwner: 'Newham Council',
+    href: '/news/peto-street-silvertown-way-police-patrol/',
+  },
+  {
+    title: 'Silvertown Way',
+    problem:
+      "A busy arterial road (the A1011) built for the docks and factories it once served, now running straight through a residential neighbourhood. Residents describe near-misses and a persistent sense of unease crossing or walking alongside the carriageway.",
+    ask: 'Speed enforcement cameras, installed by the Metropolitan Police and Transport for London.',
+    askOwner: 'Met Police & TfL',
+    href: '/news/road-safety-is-my-priority/',
+  },
+  {
+    title: 'Minnie Baldock Street',
+    problem:
+      "A low-speed, pedestrian-oriented street inside the Hallsville Quarter being used as a cut-through from Barking Road — a manoeuvre that forces vehicles across a cycle lane. There have also been incidents of speeding through the Quarter at night.",
+    ask: 'An ANPR (Automatic Number Plate Recognition) camera at the Barking Road crossing point, from Newham Council.',
+    askOwner: 'Newham Council',
+    href: '/news/minnie-baldock-street-camera-request/',
+  },
+];
+---
+
+<BaseLayout
+  title="Road Safety Campaign"
+  description="Canning Town South's road safety campaign — the case for speed cameras on Silvertown Way, an ANPR camera on Minnie Baldock Street, and engineering measures on Peto Street North. Sign the petition."
+>
+  <section class="section page-intro">
+    <div class="container page-intro__inner">
+      <p class="eyebrow">Road Safety Campaign</p>
+      <h1>Speeding is putting Canning Town South at risk</h1>
+      <p class="text-muted">
+        Since being elected as your councillor for Canning Town South, road safety is the issue I hear about most.
+        Three locations come up again and again — <strong>Peto Street North</strong>, <strong>Silvertown Way</strong>,
+        and <strong>Minnie Baldock Street</strong> — roads that were never designed for the volume of people who now
+        live, walk, and cycle around them, but which still carry traffic moving far too fast for a residential
+        neighbourhood.
+      </p>
+      <p class="text-muted">
+        I've written to the Deputy Mayor for Policing and Crime, the Deputy Mayor for Transport, and Newham Council
+        about this, and joined a police patrol to see the problem first hand. Now I'm asking residents to add their
+        voice too.
+      </p>
+      <div class="page-intro__cta">
+        <a class="btn btn-primary" href="#sign-the-petition">Sign the petition &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">The problem</p>
+        <h2>Three streets, one pattern</h2>
+        <p class="text-muted">
+          Each of these locations has a different layout and a different fix, but the underlying story is the same:
+          infrastructure that hasn't caught up with the fact that this is now a residential area.
+        </p>
+      </div>
+
+      <div class="grid grid-3">
+        {issues.map((issue) => (
+          <div class="card issue-card">
+            <h3>{issue.title}</h3>
+            <p class="text-muted">{issue.problem}</p>
+            <p class="issue-card__ask"><span class="issue-card__ask-owner">The ask — {issue.askOwner}:</span> {issue.ask}</p>
+            <a class="issue-card__link" href={withBase(issue.href)}>Read the full story &rarr;</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container asks-section">
+      <div class="section-header">
+        <p class="eyebrow">What we're asking for</p>
+        <h2>Three practical, achievable actions</h2>
+      </div>
+      <ul class="asks-list">
+        <li>
+          <strong>The Metropolitan Police and Transport for London</strong> to install speed cameras on
+          <strong>Silvertown Way</strong>.
+        </li>
+        <li>
+          <strong>Newham Council</strong> to install an ANPR camera on <strong>Minnie Baldock Street</strong>, at the
+          point where vehicles cross the cycle lane on Barking Road.
+        </li>
+        <li>
+          <strong>Newham Council</strong> to deliver an engineering solution — such as speed humps, chicanes, or road
+          narrowing — on <strong>Peto Street North</strong>.
+        </li>
+      </ul>
+      <p class="text-muted">
+        None of these are radical asks. They're the kind of measures Vision Zero, the Mayor of London's plan to
+        eliminate deaths and serious injuries on London's roads by 2041 (fully endorsed by Newham Council), already
+        commits us to. What's needed now is for the Met, TfL, and the Council to actually deliver them.
+      </p>
+    </div>
+  </section>
+
+  <section id="sign-the-petition" class="section section-alt">
+    <div class="container form-section">
+      <div class="section-header">
+        <p class="eyebrow">Sign the petition</p>
+        <h2>Add your voice</h2>
+        <p class="text-muted">
+          If you live, work, or travel through Canning Town South, please sign the petition below. The more people
+          who add their name, the harder it is for the Met, TfL and Newham Council to leave these roads as they are.
+        </p>
+      </div>
+      <div class="card form-card">
+        <PetitionForm />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-intro__inner {
+    max-width: 46rem;
+  }
+
+  .page-intro__cta {
+    margin-top: 1.5rem;
+  }
+
+  .issue-card {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .issue-card__ask {
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+  }
+
+  .issue-card__ask-owner {
+    font-weight: 700;
+    color: var(--color-red-600);
+  }
+
+  .issue-card__link {
+    margin-top: 0.75rem;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.92rem;
+  }
+
+  .asks-section {
+    max-width: 46rem;
+  }
+
+  .asks-list {
+    margin: 0 0 1.5rem;
+    padding-left: 1.2em;
+  }
+
+  .asks-list li {
+    margin-bottom: 0.75em;
+    font-size: 1.05rem;
+  }
+
+  .form-section {
+    max-width: 46rem;
+  }
+
+  .form-card {
+    padding: 2rem;
+    margin-top: 1rem;
+  }
+</style>

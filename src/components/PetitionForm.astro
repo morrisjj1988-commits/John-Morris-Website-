@@ -1,0 +1,274 @@
+---
+// Static-site petition form, following the same pattern as ContactForm.astro
+// and Newsletter.astro: pass a `formspreeEndpoint` prop
+// (https://formspree.io/f/xxxxxxxx) to submit via fetch() for real. Until
+// then it's a working preview that shows an inline confirmation on submit
+// without sending data anywhere.
+import { withBase } from '../lib/url';
+import { site } from '../lib/site';
+
+interface Props {
+  formId?: string;
+  formspreeEndpoint?: string;
+}
+
+const { formId = 'petition-form', formspreeEndpoint } = Astro.props;
+
+const issueOptions = [
+  { id: 'peto-street', label: 'Speeding on Peto Street North' },
+  { id: 'silvertown-way', label: 'Lack of speed cameras on Silvertown Way' },
+  { id: 'minnie-baldock', label: 'Speeding on Minnie Baldock Street' },
+  { id: 'both', label: 'Both' },
+];
+---
+
+<form
+  id={formId}
+  class="petition-form"
+  data-petition-form
+  novalidate
+  {...formspreeEndpoint
+    ? { method: 'POST', action: formspreeEndpoint, 'data-formspree-endpoint': formspreeEndpoint }
+    : {}}
+>
+  <div class="form-row">
+    <div class="form-field">
+      <label for={`${formId}-name`}>Full name</label>
+      <input id={`${formId}-name`} name="name" type="text" autocomplete="name" required />
+    </div>
+    <div class="form-field">
+      <label for={`${formId}-email`}>Email address</label>
+      <input id={`${formId}-email`} name="email" type="email" autocomplete="email" required />
+    </div>
+  </div>
+
+  <div class="form-field">
+    <label for={`${formId}-address`}>Home address / postcode</label>
+    <span id={`${formId}-address-hint`} class="hint">
+      So we can confirm you live, work, or travel through the affected area
+    </span>
+    <input
+      id={`${formId}-address`}
+      name="address"
+      type="text"
+      autocomplete="street-address"
+      aria-describedby={`${formId}-address-hint`}
+      required
+    />
+  </div>
+
+  <fieldset class="form-fieldset">
+    <legend>Are you a resident of the London Borough of Newham?</legend>
+    <div class="radio-group">
+      <div class="radio-field">
+        <input id={`${formId}-resident-yes`} name="resident" type="radio" value="Yes" required />
+        <label for={`${formId}-resident-yes`}>Yes</label>
+      </div>
+      <div class="radio-field">
+        <input id={`${formId}-resident-no`} name="resident" type="radio" value="No" required />
+        <label for={`${formId}-resident-no`}>No</label>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset class="form-fieldset" data-issues-fieldset>
+    <legend>Which issue(s) are you most concerned about?</legend>
+    <span class="hint">Select all that apply</span>
+    <div class="checkbox-group">
+      {issueOptions.map((option) => (
+        <div class="checkbox-field checkbox-field--inline">
+          <input id={`${formId}-issue-${option.id}`} name="issues[]" type="checkbox" value={option.label} />
+          <label for={`${formId}-issue-${option.id}`}>{option.label}</label>
+        </div>
+      ))}
+      <div class="checkbox-field checkbox-field--inline">
+        <input id={`${formId}-issue-other`} name="issues[]" type="checkbox" value="Other" data-issue-other-toggle />
+        <label for={`${formId}-issue-other`}>Other</label>
+      </div>
+      <div class="form-field issue-other-field" data-issue-other-field hidden>
+        <label for={`${formId}-issue-other-text`}>Please specify</label>
+        <input id={`${formId}-issue-other-text`} name="issues_other" type="text" />
+      </div>
+    </div>
+    <p class="form-note" role="alert" aria-live="assertive" data-issues-error hidden>
+      Please select at least one issue.
+    </p>
+  </fieldset>
+
+  <div class="form-field">
+    <p class="data-protection-note">
+      <strong>Data protection statement:</strong> the details you provide will be used to compile this petition and,
+      for the purpose of presenting it, shared with Newham Council (and, where an ask relates to them, the
+      Metropolitan Police and Transport for London). Your details won't be used for anything else. See the{' '}
+      <a href={withBase('/legal/privacy-policy/')}>Privacy Policy</a> for full details.
+    </p>
+    <div class="checkbox-field">
+      <input id={`${formId}-consent`} name="consent" type="checkbox" required />
+      <label for={`${formId}-consent`}>
+        I have read the data protection statement, and I consent to my details being shared with Newham Council for
+        the purpose of this petition
+      </label>
+    </div>
+  </div>
+
+  <div class="form-field">
+    <label for={`${formId}-comments`}>Additional comments or personal experiences</label>
+    <span id={`${formId}-comments-hint`} class="hint">Optional — e.g. near-misses, specific concerns</span>
+    <textarea id={`${formId}-comments`} name="comments" rows="4" aria-describedby={`${formId}-comments-hint`}></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Sign the petition</button>
+
+  <p class="form-note" role="status" aria-live="polite" data-petition-status hidden>
+    {formspreeEndpoint
+      ? 'Thank you for signing — your support has been added to the petition.'
+      : 'Thank you for signing! (This is a working preview — connect it to a real submission backend before launch.)'}
+  </p>
+  {formspreeEndpoint && (
+    <p class="form-note" role="alert" aria-live="assertive" data-petition-error hidden>
+      Sorry, something went wrong submitting your signature. Please try again, or email{' '}
+      <a href={`mailto:${site.email}`}>{site.email}</a> directly.
+    </p>
+  )}
+</form>
+
+<script>
+  document.querySelectorAll<HTMLFormElement>('[data-petition-form]').forEach((form) => {
+    const otherToggle = form.querySelector<HTMLInputElement>('[data-issue-other-toggle]');
+    const otherField = form.querySelector<HTMLElement>('[data-issue-other-field]');
+
+    otherToggle?.addEventListener('change', () => {
+      if (otherField) otherField.hidden = !otherToggle.checked;
+    });
+
+    form.addEventListener('submit', (event) => {
+      const issuesError = form.querySelector<HTMLElement>('[data-issues-error]');
+      const anyIssueChecked = Array.from(
+        form.querySelectorAll<HTMLInputElement>('input[name="issues[]"]'),
+      ).some((checkbox) => checkbox.checked);
+
+      if (!anyIssueChecked) {
+        event.preventDefault();
+        if (issuesError) issuesError.hidden = false;
+        form.querySelector<HTMLElement>('[data-issues-fieldset]')?.scrollIntoView({ block: 'center', behavior: 'smooth' });
+        return;
+      }
+      if (issuesError) issuesError.hidden = true;
+
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        form.reportValidity();
+        return;
+      }
+
+      const endpoint = form.dataset.formspreeEndpoint;
+      const status = form.querySelector<HTMLElement>('[data-petition-status]');
+      const errorNote = form.querySelector<HTMLElement>('[data-petition-error]');
+
+      if (endpoint) {
+        event.preventDefault();
+        if (errorNote) errorNote.hidden = true;
+
+        const submitButton = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+        if (submitButton) submitButton.disabled = true;
+
+        fetch(endpoint, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        })
+          .then((response) => {
+            if (!response.ok) throw new Error('Petition submission failed');
+            if (status) status.hidden = false;
+            form.reset();
+            if (otherField) otherField.hidden = true;
+          })
+          .catch(() => {
+            if (errorNote) errorNote.hidden = false;
+          })
+          .finally(() => {
+            if (submitButton) submitButton.disabled = false;
+          });
+        return;
+      }
+
+      event.preventDefault();
+      if (status) {
+        status.hidden = false;
+      }
+      form.reset();
+      if (otherField) otherField.hidden = true;
+    });
+  });
+</script>
+
+<style>
+  .form-fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 1.1rem;
+  }
+
+  .form-fieldset legend {
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0;
+    margin-bottom: 0.4rem;
+  }
+
+  .form-fieldset .hint {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.6rem;
+  }
+
+  .radio-group {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .radio-field {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .radio-field label {
+    font-weight: 400;
+  }
+
+  .checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .checkbox-field--inline {
+    margin-bottom: 0;
+  }
+
+  .checkbox-field--inline label {
+    color: var(--color-text);
+    font-size: 0.98rem;
+  }
+
+  .issue-other-field {
+    margin: 0.2rem 0 0 1.9rem;
+    max-width: 24rem;
+  }
+
+  .issue-other-field[hidden] {
+    display: none;
+  }
+
+  .data-protection-note {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    background: var(--color-surface-alt);
+    border-radius: var(--radius-sm);
+    padding: 0.9rem 1rem;
+    margin-bottom: 0.9rem;
+  }
+</style>
