@@ -31,12 +31,13 @@ option isn't reintroduced.
 file); pick per-instance via props.
 
 **Live now — Formspree.** The Contact page's "Get in touch" form
-(`src/pages/contact/index.astro`) submits via `fetch()` to a
-[Formspree](https://formspree.io) endpoint (`formspreeEndpoint` prop), shown inline as JSON so the page
-never navigates away — success shows the existing "thanks" confirmation message, failure shows an inline
-error with a mailto fallback. This works regardless of hosting platform (GitHub Pages, Netlify, anywhere),
-since it's a plain client-side API call, not something tied to the host. Submissions and the endpoint are
-managed at formspree.io (free tier: 50 submissions/month).
+(`src/pages/contact/index.astro`) and the Road Safety Campaign's petition form
+(`src/pages/road-safety-campaign/index.astro`) submit via `fetch()` to their own
+[Formspree](https://formspree.io) endpoints (`formspreeEndpoint` prop), shown inline as JSON so the page
+never navigates away — success shows the existing confirmation message, failure shows an inline error with
+a mailto fallback. This works regardless of hosting platform (GitHub Pages, Netlify, anywhere), since it's a
+plain client-side API call, not something tied to the host. Submissions and each endpoint are managed at
+formspree.io (free tier: 50 submissions/month per form).
 
 **Available but unused — Netlify Forms.** Pass `netlify` + a unique `netlifyFormName` instead of
 `formspreeEndpoint` to use [Netlify Forms](https://docs.netlify.com/manage/forms/setup/) — no external
@@ -45,10 +46,9 @@ served by Netlify** (Netlify's build process has to detect the `data-netlify="tr
 Since the live site is on GitHub Pages, this path isn't active, but the code and a branded
 `/contact/thanks/` redirect page are in place if hosting ever moves to Netlify.
 
-The Find Help casework form, the newsletter sign-up, and the Road Safety Campaign petition form
-(`PetitionForm.astro`) are still unwired (working preview only) — apply either of the above patterns to
-`ContactForm.astro`'s casework instance, `Newsletter.astro`, or `PetitionForm.astro`'s `formspreeEndpoint`
-prop to connect them the same way.
+The Find Help casework form and the newsletter sign-up are still unwired (working preview only) — apply
+either of the above patterns to `ContactForm.astro`'s casework instance or `Newsletter.astro` to connect
+them the same way.
 
 ## Analytics
 
@@ -165,11 +165,11 @@ real content:
   confirm official party branding with the client if applicable.
 - **Newham Council profile link** — `site.newhamProfileUrl` in `src/lib/site.ts` should point to John's real
   council.newham.gov.uk profile page once known.
-- **Forms** — the Contact page's "Get in touch" form is wired up to **Formspree** (see "Forms" section
-  above). The Find Help casework enquiry form, the newsletter sign-up, and the Road Safety Campaign
-  petition form still just show an inline confirmation on submit without sending data anywhere (see
-  comments in `ContactForm.astro`, `Newsletter.astro`, and `PetitionForm.astro`) — wire these up the same
-  way, or to a different backend/mailing list provider, before launch.
+- **Forms** — the Contact page's "Get in touch" form and the Road Safety Campaign petition form are wired
+  up to **Formspree** (see "Forms" section above). The Find Help casework enquiry form and the newsletter
+  sign-up still just show an inline confirmation on submit without sending data anywhere (see comments in
+  `ContactForm.astro` and `Newsletter.astro`) — wire these up the same way, or to a different
+  backend/mailing list provider, before launch.
 - **Legal pages** — `privacy-policy`, `cookie-policy`, and `terms-of-use` are drafted starting points and
   are marked `noindex` until reviewed; they should be checked (ideally by someone with a data protection
   background) before launch, and un-flagged as noindex once approved.
