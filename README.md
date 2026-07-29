@@ -31,13 +31,14 @@ option isn't reintroduced.
 file); pick per-instance via props.
 
 **Live now — Formspree.** The Contact page's "Get in touch" form
-(`src/pages/contact/index.astro`) and the Road Safety Campaign's petition form
-(`src/pages/road-safety-campaign/index.astro`) submit via `fetch()` to their own
-[Formspree](https://formspree.io) endpoints (`formspreeEndpoint` prop), shown inline as JSON so the page
-never navigates away — success shows the existing confirmation message, failure shows an inline error with
-a mailto fallback. This works regardless of hosting platform (GitHub Pages, Netlify, anywhere), since it's a
-plain client-side API call, not something tied to the host. Submissions and each endpoint are managed at
-formspree.io (free tier: 50 submissions/month per form).
+(`src/pages/contact/index.astro`), the Road Safety Campaign's petition form
+(`src/pages/road-safety-campaign/index.astro`), and both Caxton Street car wash campaign forms — the noise
+monitoring sign-up and the petition (`src/pages/caxton-street-car-wash-campaign/index.astro`) — submit via
+`fetch()` to their own [Formspree](https://formspree.io) endpoints (`formspreeEndpoint` prop), shown inline
+as JSON so the page never navigates away — success shows the existing confirmation message, failure shows
+an inline error with a mailto fallback. This works regardless of hosting platform (GitHub Pages, Netlify,
+anywhere), since it's a plain client-side API call, not something tied to the host. Submissions and each
+endpoint are managed at formspree.io (free tier: 50 submissions/month per form).
 
 **Available but unused — Netlify Forms.** Pass `netlify` + a unique `netlifyFormName` instead of
 `formspreeEndpoint` to use [Netlify Forms](https://docs.netlify.com/manage/forms/setup/) — no external
@@ -46,9 +47,7 @@ served by Netlify** (Netlify's build process has to detect the `data-netlify="tr
 Since the live site is on GitHub Pages, this path isn't active, but the code and a branded
 `/contact/thanks/` redirect page are in place if hosting ever moves to Netlify.
 
-The Find Help casework form, the newsletter sign-up, and the two Caxton Street car wash campaign forms
-(`NoiseMonitoringSignupForm.astro` and the petition instance in
-`src/pages/caxton-street-car-wash-campaign/index.astro`) are still unwired (working preview only) — apply
+The Find Help casework form and the newsletter sign-up are still unwired (working preview only) — apply
 either of the above patterns to connect them the same way.
 
 ## Analytics
