@@ -7,19 +7,35 @@
 import { withBase } from '../lib/url';
 import { site } from '../lib/site';
 
+interface IssueOption {
+  id: string;
+  label: string;
+}
+
 interface Props {
   formId?: string;
   formspreeEndpoint?: string;
+  issuesLegend?: string;
+  issueOptions?: IssueOption[];
+  addressHint?: string;
+  dataProtectionNote?: string;
+  submitLabel?: string;
 }
 
-const { formId = 'petition-form', formspreeEndpoint } = Astro.props;
-
-const issueOptions = [
-  { id: 'peto-street', label: 'Speeding on Peto Street North' },
-  { id: 'silvertown-way', label: 'Lack of speed cameras on Silvertown Way' },
-  { id: 'minnie-baldock', label: 'Speeding on Minnie Baldock Street' },
-  { id: 'all', label: 'All' },
-];
+const {
+  formId = 'petition-form',
+  formspreeEndpoint,
+  issuesLegend = 'Which issue(s) are you most concerned about?',
+  issueOptions = [
+    { id: 'peto-street', label: 'Speeding on Peto Street North' },
+    { id: 'silvertown-way', label: 'Lack of speed cameras on Silvertown Way' },
+    { id: 'minnie-baldock', label: 'Speeding on Minnie Baldock Street' },
+    { id: 'all', label: 'All' },
+  ],
+  addressHint = 'So we can confirm you live, work, or travel through the affected area',
+  dataProtectionNote = "the details you provide will be used to compile this petition and, for the purpose of presenting it, shared with Newham Council (and, where an ask relates to them, the Metropolitan Police and Transport for London). Your details won't be used for anything else.",
+  submitLabel = 'Sign the petition',
+} = Astro.props;
 ---
 
 <form
@@ -45,7 +61,7 @@ const issueOptions = [
   <div class="form-field">
     <label for={`${formId}-address`}>Home address / postcode</label>
     <span id={`${formId}-address-hint`} class="hint">
-      So we can confirm you live, work, or travel through the affected area
+      {addressHint}
     </span>
     <input
       id={`${formId}-address`}
@@ -72,7 +88,7 @@ const issueOptions = [
   </fieldset>
 
   <fieldset class="form-fieldset" data-issues-fieldset>
-    <legend>Which issue(s) are you most concerned about?</legend>
+    <legend>{issuesLegend}</legend>
     <span class="hint">Select all that apply</span>
     <div class="checkbox-group">
       {issueOptions.map((option) => (
@@ -97,9 +113,7 @@ const issueOptions = [
 
   <div class="form-field">
     <p class="data-protection-note">
-      <strong>Data protection statement:</strong> the details you provide will be used to compile this petition and,
-      for the purpose of presenting it, shared with Newham Council (and, where an ask relates to them, the
-      Metropolitan Police and Transport for London). Your details won't be used for anything else. See the{' '}
+      <strong>Data protection statement:</strong> {dataProtectionNote} See the{' '}
       <a href={withBase('/legal/privacy-policy/')}>Privacy Policy</a> for full details.
     </p>
     <div class="checkbox-field">
@@ -117,7 +131,7 @@ const issueOptions = [
     <textarea id={`${formId}-comments`} name="comments" rows="4" aria-describedby={`${formId}-comments-hint`}></textarea>
   </div>
 
-  <button type="submit" class="btn btn-primary">Sign the petition</button>
+  <button type="submit" class="btn btn-primary">{submitLabel}</button>
 
   <p class="form-note" role="status" aria-live="polite" data-petition-status hidden>
     {formspreeEndpoint

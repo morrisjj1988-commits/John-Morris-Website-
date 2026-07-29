@@ -46,9 +46,10 @@ served by Netlify** (Netlify's build process has to detect the `data-netlify="tr
 Since the live site is on GitHub Pages, this path isn't active, but the code and a branded
 `/contact/thanks/` redirect page are in place if hosting ever moves to Netlify.
 
-The Find Help casework form and the newsletter sign-up are still unwired (working preview only) — apply
-either of the above patterns to `ContactForm.astro`'s casework instance or `Newsletter.astro` to connect
-them the same way.
+The Find Help casework form, the newsletter sign-up, and the two Caxton Street car wash campaign forms
+(`NoiseMonitoringSignupForm.astro` and the petition instance in
+`src/pages/caxton-street-car-wash-campaign/index.astro`) are still unwired (working preview only) — apply
+either of the above patterns to connect them the same way.
 
 ## Analytics
 

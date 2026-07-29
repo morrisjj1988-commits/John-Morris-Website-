@@ -55,7 +55,7 @@ I will be pressing the Council, alongside Cllr Dasgupta, to confirm:
 
 ## What residents can do now
 
-If you are affected by noise from the car wash, I would strongly encourage you to contact the Council to request the noise monitoring equipment. The evidence it produces is central to building a statutory nuisance case, and equipment availability is limited, so early contact matters.
+If you are affected by noise from the car wash, I would strongly encourage you to volunteer your property to host the Council's noise monitoring equipment. The evidence it produces is central to building a statutory nuisance case, and equipment availability is limited, so early contact matters. I've also opened a petition calling on the Council to issue a Community Protection Notice, investigate the noise, and review the site for other planning breaches — you can do both on the [Caxton Street North car wash campaign page](/caxton-street-car-wash-campaign/).
 
 I know this has dragged on for residents, and I share the frustration that a legal technicality has closed off the most direct planning remedy. I will keep pushing on the alternative routes above and will update this page as I hear more from the Council.
 

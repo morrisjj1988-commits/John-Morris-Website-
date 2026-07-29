@@ -1,0 +1,140 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PetitionForm from '../../components/PetitionForm.astro';
+import NoiseMonitoringSignupForm from '../../components/NoiseMonitoringSignupForm.astro';
+import { withBase } from '../../lib/url';
+
+const petitionIssueOptions = [
+  { id: 'cpn', label: 'Issue a Community Protection Notice against the car wash' },
+  { id: 'investigate-noise', label: 'Investigate the noise as a statutory nuisance and take enforcement action' },
+  { id: 'planning-review', label: 'Review the site for planning breaches not covered by the ten-year immunity' },
+  { id: 'all', label: 'All' },
+];
+---
+
+<BaseLayout
+  title="Caxton Street North Car Wash — Noise Campaign"
+  description="The hand car wash on Caxton Street North has been operating outside its permitted hours for over ten years, and is now immune from planning enforcement. Volunteer your property for noise monitoring, and sign the petition calling on Newham Council to act."
+>
+  <section class="section page-intro">
+    <div class="container page-intro__inner">
+      <p class="eyebrow">Caxton Street North</p>
+      <h1>Tackling the car wash noise, now planning enforcement is closed off</h1>
+      <p class="text-muted">
+        Residents around the hand car wash on Caxton Street North have raised noise disturbance with me repeatedly.
+        Newham Council has confirmed that, because the car wash has been operating outside its permitted hours for
+        more than ten years, the breach is now immune from planning enforcement. That closes off the most direct
+        remedy — but not the only one. Read the
+        {' '}<a href={withBase('/news/caxton-street-car-wash-noise-follow-up/')}>full background and the Mayor's response</a>.
+      </p>
+      <p class="text-muted">
+        There are two practical things residents can do right now: volunteer your property to host the Council's
+        noise monitoring equipment, and add your name to the petition calling on the Council to use its remaining
+        powers.
+      </p>
+      <div class="page-intro__cta">
+        <a class="btn btn-primary" href="#volunteer-your-property">Volunteer your property &rarr;</a>
+        <a class="btn btn-secondary" href="#sign-the-petition">Sign the petition &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container asks-section">
+      <div class="section-header">
+        <p class="eyebrow">What we're asking for</p>
+        <h2>Three practical, achievable actions</h2>
+      </div>
+      <ul class="asks-list">
+        <li>
+          <strong>Newham Council's Environmental Health team</strong> to assess the noise as a statutory nuisance,
+          using evidence from the monitoring equipment, and issue an abatement notice if appropriate.
+        </li>
+        <li>
+          <strong>Newham Council</strong> to issue a <strong>Community Protection Notice</strong>, addressing the
+          pattern of disturbance directly without requiring a formal statutory nuisance finding.
+        </li>
+        <li>
+          <strong>Newham Council</strong> to investigate whether a new planning application, or other planning
+          breaches on the site not covered by the ten-year immunity, need to be assessed.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="volunteer-your-property" class="section">
+    <div class="container form-section">
+      <div class="section-header">
+        <p class="eyebrow">Volunteer your property</p>
+        <h2>Host the Council's noise monitoring equipment</h2>
+        <p class="text-muted">
+          The Council can install noise monitoring equipment in a home for up to a week. It records continuously but
+          only saves audio when you activate a remote control, capturing five minutes at a time to evidence the
+          disturbance. Availability is limited, so if you're affected and able to host it, please put your name
+          forward.
+        </p>
+      </div>
+      <div class="card form-card">
+        <NoiseMonitoringSignupForm />
+      </div>
+    </div>
+  </section>
+
+  <section id="sign-the-petition" class="section section-alt">
+    <div class="container form-section">
+      <div class="section-header">
+        <p class="eyebrow">Sign the petition</p>
+        <h2>Add your voice</h2>
+        <p class="text-muted">
+          If you live, work, or travel near Caxton Street North and want to see the Council act on this noise issue,
+          please sign the petition below.
+        </p>
+      </div>
+      <div class="card form-card">
+        <PetitionForm
+          formId="caxton-car-wash-petition"
+          issuesLegend="Which action(s) do you want the Council to take?"
+          issueOptions={petitionIssueOptions}
+          addressHint="So we can confirm you live, work, or travel near Caxton Street North"
+          dataProtectionNote="the details you provide will be used to compile this petition and, for the purpose of presenting it, shared with Newham Council. Your details won't be used for anything else."
+        />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-intro__inner {
+    max-width: 46rem;
+  }
+
+  .page-intro__cta {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .asks-section {
+    max-width: 46rem;
+  }
+
+  .asks-list {
+    margin: 0;
+    padding-left: 1.2em;
+  }
+
+  .asks-list li {
+    margin-bottom: 0.75em;
+    font-size: 1.05rem;
+  }
+
+  .form-section {
+    max-width: 46rem;
+  }
+
+  .form-card {
+    padding: 2rem;
+    margin-top: 1rem;
+  }
+</style>
