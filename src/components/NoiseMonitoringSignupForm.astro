@@ -1,0 +1,196 @@
+---
+// Static-site sign-up form, following the same pattern as ContactForm.astro
+// and PetitionForm.astro: pass a `formspreeEndpoint` prop
+// (https://formspree.io/f/xxxxxxxx) to submit via fetch() for real. Until
+// then it's a working preview that shows an inline confirmation on submit
+// without sending data anywhere.
+import { withBase } from '../lib/url';
+import { site } from '../lib/site';
+
+interface Props {
+  formId?: string;
+  formspreeEndpoint?: string;
+}
+
+const { formId = 'noise-monitoring-form', formspreeEndpoint } = Astro.props;
+---
+
+<form
+  id={formId}
+  class="noise-signup-form"
+  data-noise-signup-form
+  novalidate
+  {...formspreeEndpoint
+    ? { method: 'POST', action: formspreeEndpoint, 'data-formspree-endpoint': formspreeEndpoint }
+    : {}}
+>
+  <div class="form-row">
+    <div class="form-field">
+      <label for={`${formId}-name`}>Full name</label>
+      <input id={`${formId}-name`} name="name" type="text" autocomplete="name" required />
+    </div>
+    <div class="form-field">
+      <label for={`${formId}-email`}>Email address</label>
+      <input id={`${formId}-email`} name="email" type="email" autocomplete="email" required />
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-field">
+      <label for={`${formId}-phone`}>Phone number</label>
+      <span id={`${formId}-phone-hint`} class="hint">So the Council can contact you to schedule installation</span>
+      <input id={`${formId}-phone`} name="phone" type="tel" autocomplete="tel" aria-describedby={`${formId}-phone-hint`} required />
+    </div>
+    <div class="form-field">
+      <label for={`${formId}-address`}>Property address / postcode</label>
+      <span id={`${formId}-address-hint`} class="hint">Where the equipment would be installed</span>
+      <input id={`${formId}-address`} name="address" type="text" autocomplete="street-address" aria-describedby={`${formId}-address-hint`} required />
+    </div>
+  </div>
+
+  <fieldset class="form-fieldset">
+    <legend>Are you able to give access to the property for equipment installation?</legend>
+    <div class="radio-group">
+      <div class="radio-field">
+        <input id={`${formId}-access-yes`} name="access" type="radio" value="Yes" required />
+        <label for={`${formId}-access-yes`}>Yes — I'm the resident/leaseholder, or have their agreement</label>
+      </div>
+      <div class="radio-field">
+        <input id={`${formId}-access-no`} name="access" type="radio" value="No" required />
+        <label for={`${formId}-access-no`}>No</label>
+      </div>
+    </div>
+  </fieldset>
+
+  <div class="form-field">
+    <label for={`${formId}-availability`}>Best times to arrange installation</label>
+    <span id={`${formId}-availability-hint`} class="hint">Optional — e.g. weekday evenings, weekends</span>
+    <input id={`${formId}-availability`} name="availability" type="text" aria-describedby={`${formId}-availability-hint`} />
+  </div>
+
+  <div class="form-field">
+    <label for={`${formId}-details`}>Additional details</label>
+    <span id={`${formId}-details-hint`} class="hint">
+      Optional — e.g. which rooms face the car wash, and when the noise is worst
+    </span>
+    <textarea id={`${formId}-details`} name="details" rows="4" aria-describedby={`${formId}-details-hint`}></textarea>
+  </div>
+
+  <div class="form-field">
+    <p class="data-protection-note">
+      <strong>Data protection statement:</strong> the details you provide will be used to arrange installation of
+      Newham Council's noise monitoring equipment at your property, and will be shared with the Council's
+      Environmental Health team for that purpose. Your details won't be used for anything else. See the{' '}
+      <a href={withBase('/legal/privacy-policy/')}>Privacy Policy</a> for full details.
+    </p>
+    <div class="checkbox-field">
+      <input id={`${formId}-consent`} name="consent" type="checkbox" required />
+      <label for={`${formId}-consent`}>
+        I have read the data protection statement, and I consent to my details being shared with Newham Council's
+        Environmental Health team to arrange installation of the noise monitoring equipment
+      </label>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Volunteer my property</button>
+
+  <p class="form-note" role="status" aria-live="polite" data-noise-signup-status hidden>
+    {formspreeEndpoint
+      ? "Thank you — the Council's Environmental Health team will be in touch to arrange installation."
+      : 'Thank you! (This is a working preview — connect it to a real submission backend before launch.)'}
+  </p>
+  {formspreeEndpoint && (
+    <p class="form-note" role="alert" aria-live="assertive" data-noise-signup-error hidden>
+      Sorry, something went wrong submitting your details. Please try again, or email{' '}
+      <a href={`mailto:${site.email}`}>{site.email}</a> directly.
+    </p>
+  )}
+</form>
+
+<script>
+  document.querySelectorAll<HTMLFormElement>('[data-noise-signup-form]').forEach((form) => {
+    form.addEventListener('submit', (event) => {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        form.reportValidity();
+        return;
+      }
+
+      const endpoint = form.dataset.formspreeEndpoint;
+      const status = form.querySelector<HTMLElement>('[data-noise-signup-status]');
+      const errorNote = form.querySelector<HTMLElement>('[data-noise-signup-error]');
+
+      if (endpoint) {
+        event.preventDefault();
+        if (errorNote) errorNote.hidden = true;
+
+        const submitButton = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+        if (submitButton) submitButton.disabled = true;
+
+        fetch(endpoint, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        })
+          .then((response) => {
+            if (!response.ok) throw new Error('Sign-up submission failed');
+            if (status) status.hidden = false;
+            form.reset();
+          })
+          .catch(() => {
+            if (errorNote) errorNote.hidden = false;
+          })
+          .finally(() => {
+            if (submitButton) submitButton.disabled = false;
+          });
+        return;
+      }
+
+      event.preventDefault();
+      if (status) {
+        status.hidden = false;
+      }
+      form.reset();
+    });
+  });
+</script>
+
+<style>
+  .form-fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 1.1rem;
+  }
+
+  .form-fieldset legend {
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0;
+    margin-bottom: 0.4rem;
+  }
+
+  .radio-group {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .radio-field {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .radio-field label {
+    font-weight: 400;
+  }
+
+  .data-protection-note {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    background: var(--color-surface-alt);
+    border-radius: var(--radius-sm);
+    padding: 0.9rem 1rem;
+    margin-bottom: 0.9rem;
+  }
+</style>
