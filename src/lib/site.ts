@@ -96,31 +96,31 @@ export const helpCategories = [
   {
     title: 'Housing',
     description: 'Repairs, damp and mould, overcrowding, temporary accommodation, and disputes with the council or housing associations.',
-    icon: 'home',
+    icon: 'mdi:home-outline',
   },
   {
     title: 'Council Tax & Benefits',
     description: 'Council Tax queries and support, Housing Benefit, Council Tax Reduction, and help accessing other financial support.',
-    icon: 'coins',
+    icon: 'mdi:cash-multiple',
   },
   {
     title: 'Planning & Development',
     description: 'Local planning applications, objections and support, and questions about development affecting your street.',
-    icon: 'building',
+    icon: 'mdi:office-building-outline',
   },
   {
     title: 'Streets, Bins & Recycling',
     description: 'Missed bin collections, fly-tipping, street cleaning, potholes, streetlighting, and other environmental issues.',
-    icon: 'bin',
+    icon: 'mdi:delete-outline',
   },
   {
     title: 'Anti-Social Behaviour',
     description: 'Noise, harassment, and anti-social behaviour affecting you, your family, or your neighbourhood.',
-    icon: 'shield',
+    icon: 'mdi:shield-alert-outline',
   },
   {
     title: 'Anything Else Council-Related',
     description: "If it isn't listed here, get in touch anyway — if I can't help directly, I'll point you to someone who can.",
-    icon: 'chat',
+    icon: 'mdi:chat-outline',
   },
 ];

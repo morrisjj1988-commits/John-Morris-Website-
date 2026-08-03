@@ -111,24 +111,62 @@ const { compact = false, formspreeEndpoint } = Astro.props;
     gap: 1.75rem;
     grid-template-columns: 1.1fr 1.4fr;
     align-items: start;
-    background: var(--color-surface-alt);
+    background: var(--color-red-600);
+    color: #fff;
   }
 
-  .newsletter--compact {
-    grid-template-columns: 1fr;
-    padding: 1.75rem;
+  .newsletter :global(a) {
+    color: #fff;
+    text-decoration: underline;
   }
 
   .newsletter__copy h2 {
     font-size: 1.5rem;
+    color: #fff;
+  }
+
+  .newsletter :global(.text-muted) {
+    color: #f3dad4;
   }
 
   .newsletter__form .checkbox-field {
     margin-top: 0.9rem;
   }
 
+  .newsletter__form :global(.checkbox-field label) {
+    color: #fff;
+  }
+
   .newsletter__email-field {
     max-width: 24rem;
+  }
+
+  .newsletter__form :global(input) {
+    border: 2px solid #fff;
+    background: var(--color-red-700);
+    color: #fff;
+  }
+
+  .newsletter__form :global(input::placeholder) {
+    color: #f3dad4;
+  }
+
+  .newsletter :global(.btn-primary) {
+    background: var(--color-navy-900);
+    border-color: var(--color-navy-900);
+  }
+
+  .newsletter :global(.btn-primary:hover) {
+    background: #0e1830;
+  }
+
+  .newsletter :global(.form-note) {
+    color: #fff;
+  }
+
+  .newsletter--compact {
+    grid-template-columns: 1fr;
+    padding: 1.75rem;
   }
 
   @media (max-width: 700px) {
