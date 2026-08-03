@@ -3,9 +3,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import NewsCard from '../components/NewsCard.astro';
 import Newsletter from '../components/Newsletter.astro';
+import { Icon } from 'astro-icon/components';
 import { helpCategories } from '../lib/site';
 import { withBase } from '../lib/url';
 import { getCollection } from 'astro:content';
+
+const campaigns = [
+  {
+    tag: 'Road Safety',
+    title: 'Road Safety Campaign',
+    body: 'Pressing for measures to slow traffic and protect pedestrians on the streets residents raise with me most.',
+    href: '/road-safety-campaign/',
+  },
+  {
+    tag: 'Community',
+    title: 'Caxton Street Car Wash Noise Campaign',
+    body: 'Working with residents and the Council on noise from the Caxton Street North car wash, after enforcement limits lapsed.',
+    href: '/caxton-street-car-wash-campaign/',
+  },
+];
 
 const allPosts = await getCollection('news', ({ data }) => !data.draft);
 const latestPosts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 6);
@@ -30,7 +46,8 @@ const latestPosts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.
 
       <div class="grid grid-3">
         {helpCategories.slice(0, 3).map((item) => (
-          <div class="card help-preview-card">
+          <div class="card card--accent help-preview-card">
+            <span class="card-icon"><Icon name={item.icon} width={19} height={19} /></span>
             <h3>{item.title}</h3>
             <p class="text-muted">{item.description}</p>
           </div>
@@ -39,6 +56,25 @@ const latestPosts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.
 
       <div class="center help-cta">
         <a class="btn btn-primary" href={withBase('/find-help/')}>See how I can help &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section campaigns-band">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow campaigns-band__eyebrow">Active campaigns</p>
+        <h2>What I'm pushing for right now</h2>
+      </div>
+      <div class="grid grid-2">
+        {campaigns.map((campaign) => (
+          <div class="campaign-card">
+            <span class="campaign-card__tag">{campaign.tag}</span>
+            <h3>{campaign.title}</h3>
+            <p>{campaign.body}</p>
+            <a class="campaign-card__link" href={withBase(campaign.href)}>Follow this campaign &rarr;</a>
+          </div>
+        ))}
       </div>
     </div>
   </section>
@@ -66,7 +102,7 @@ const latestPosts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.
           </div>
 
           <div class="center help-cta">
-            <a class="btn btn-secondary news-all-link" href={withBase('/news/')}>See all news &rarr;</a>
+            <a class="btn btn-secondary" href={withBase('/news/')}>See all news &rarr;</a>
           </div>
         </>
       ) : (
@@ -101,12 +137,59 @@ const latestPosts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.
     margin-top: 2.5rem;
   }
 
-  .news-all-link {
-    color: var(--color-navy-900);
-    border-color: var(--color-navy-900);
+  .campaigns-band {
+    background: var(--color-navy-900);
+    color: var(--color-paper);
   }
 
-  @media (prefers-color-scheme: dark) {
-    .news-all-link { color: #fff; border-color: #fff; }
+  .campaigns-band :global(h2) {
+    color: var(--color-paper);
+  }
+
+  .campaigns-band__eyebrow {
+    color: var(--color-gold-500);
+  }
+
+  .campaign-card {
+    background: rgba(246, 243, 236, 0.05);
+    border: 1px solid rgba(246, 243, 236, 0.16);
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .campaign-card__tag {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-gold-500);
+    font-weight: 500;
+  }
+
+  .campaign-card h3 {
+    color: var(--color-paper);
+    margin: 0;
+  }
+
+  .campaign-card p {
+    color: #c7cdd8;
+    margin: 0;
+  }
+
+  .campaign-card__link {
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: var(--color-gold-500);
+    border-bottom: 2px solid var(--color-gold-500);
+    padding-bottom: 2px;
+    align-self: flex-start;
+  }
+
+  .campaign-card__link:hover {
+    color: #fff;
+    border-color: #fff;
   }
 </style>

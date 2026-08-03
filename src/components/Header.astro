@@ -27,8 +27,7 @@ function isActive(href: string) {
       aria-expanded="false"
       aria-controls="primary-nav"
     >
-      <span class="visually-hidden">Menu</span>
-      <span class="nav-toggle__bars" aria-hidden="true"></span>
+      Menu
     </button>
 
     <nav id="primary-nav" class="primary-nav" aria-label="Primary">
@@ -48,7 +47,7 @@ function isActive(href: string) {
 
 <style>
   .site-header {
-    background: var(--color-surface);
+    background: var(--color-bg);
     border-bottom: 1px solid var(--color-border);
     position: sticky;
     top: 0;
@@ -73,7 +72,8 @@ function isActive(href: string) {
   .brand__name {
     font-family: var(--font-heading);
     font-size: 1.3rem;
-    font-weight: 700;
+    font-weight: 800;
+    letter-spacing: 0.01em;
     color: var(--color-navy-900);
   }
 
@@ -82,44 +82,35 @@ function isActive(href: string) {
   }
 
   .brand__role {
-    font-size: 0.75rem;
-    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    font-weight: 500;
+    color: var(--color-thames);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-top: 2px;
   }
 
   .nav-toggle {
     display: none;
     background: none;
-    border: none;
+    border: 1px solid var(--color-navy-900);
+    border-radius: var(--radius-sm);
+    padding: 8px 10px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-navy-900);
     cursor: pointer;
-    padding: 0.5rem;
-  }
-
-  .nav-toggle__bars,
-  .nav-toggle__bars::before,
-  .nav-toggle__bars::after {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: var(--color-navy-900);
-    position: relative;
-    transition: transform 0.15s ease;
   }
 
   @media (prefers-color-scheme: dark) {
-    .nav-toggle__bars, .nav-toggle__bars::before, .nav-toggle__bars::after {
-      background: #fff;
+    .nav-toggle {
+      border-color: #fff;
+      color: #fff;
     }
   }
-
-  .nav-toggle__bars::before,
-  .nav-toggle__bars::after {
-    content: '';
-    position: absolute;
-    left: 0;
-  }
-
-  .nav-toggle__bars::before { top: -7px; }
-  .nav-toggle__bars::after { top: 7px; }
 
   .primary-nav {
     display: flex;
