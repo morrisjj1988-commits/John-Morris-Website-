@@ -1,7 +1,7 @@
 ---
 title: "Transition Newham, Then a Sneak Peek at Lumikha"
 date: 2026-08-01
-category: Environment
+category: Canning Town
 excerpt: "I spent Saturday talking community outreach, governance and financing with local environmental activists at Transition Newham, then popped into Lumikha for a soft-launch ube matcha latte and pandan/ube roll ahead of their grand opening on 15 August."
 image: "/images/news/placeholder.svg"
 imageAlt: "John Morris outside Lumikha on Silvertown Way, holding the cafe's grand opening flyer next to an ube matcha latte"
