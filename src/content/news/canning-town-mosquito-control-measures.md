@@ -4,7 +4,7 @@ date: 2026-09-04
 category: Canning Town
 excerpt: "Following the identification of a small number of invasive mosquitoes in Canning Town, the council is strengthening local control measures at the request of the UK Health Security Agency."
 image: "/images/news/placeholder.svg"
-imageAlt: "A residential street in Canning Town, the area covered by expanded invasive mosquito control measures"
+imageAlt: "A map showing the 300-metre radius control zone around the Canning Town mosquito incident, covering roughly 330 properties"
 draft: false
 ---
 
