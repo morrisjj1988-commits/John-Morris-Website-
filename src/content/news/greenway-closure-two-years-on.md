@@ -70,15 +70,15 @@ The point I'd end on is the word "legacy." This isn't temporary paint that gets 
 
 Below are the preliminary junction and corridor designs being developed for Cycling Future Route 7 along the A112, showing the proposed cycle track alignment, crossings and bus stop arrangements at each location.
 
-![Proposed cycle track and junction design showing ramp links, blended crossings and bus stop bypass](/images/news/greenway-closure-two-years-on/cfr7-design-1.jpg)
+![Proposed cycle track and junction design showing ramp links, blended crossings and bus stop bypass](./greenway-closure-two-years-on-cfr7-design-1.jpg)
 
-![Proposed cycle track design showing on-carriageway light segregation, interim stepped track and signalised junction modifications](/images/news/greenway-closure-two-years-on/cfr7-design-2.jpg)
+![Proposed cycle track design showing on-carriageway light segregation, interim stepped track and signalised junction modifications](./greenway-closure-two-years-on-cfr7-design-2.jpg)
 
-![Proposed cycle track design along New Plaistow Road showing interim stepped track and bus stop bypass](/images/news/greenway-closure-two-years-on/cfr7-design-3.jpg)
+![Proposed cycle track design along New Plaistow Road showing interim stepped track and bus stop bypass](./greenway-closure-two-years-on-cfr7-design-3.jpg)
 
-![Proposed junction design showing shared area footway cycle track and interim stepped two-way cycle track](/images/news/greenway-closure-two-years-on/cfr7-design-4.jpg)
+![Proposed junction design showing shared area footway cycle track and interim stepped two-way cycle track](./greenway-closure-two-years-on-cfr7-design-4.jpg)
 
-![Proposed cycle track design showing link to Pitchford Street diversion from the Greenway and on-carriageway light segregation](/images/news/greenway-closure-two-years-on/cfr7-design-5.jpg)
+![Proposed cycle track design showing link to Pitchford Street diversion from the Greenway and on-carriageway light segregation](./greenway-closure-two-years-on-cfr7-design-5.jpg)
 
 If you use the Greenway, or the roads people have moved onto since it closed, please take part when consultation opens. Lived experience of a junction beats a traffic count every time.
 
