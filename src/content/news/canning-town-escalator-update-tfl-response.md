@@ -8,6 +8,8 @@ imageAlt: "Canning Town Underground and DLR station platform"
 draft: false
 ---
 
+> **Latest update (24 September 2026):** Works to replace the steps on Escalator 10 are now underway and are expected to be finished by the end of September. [Read the latest update](/news/canning-town-escalator-works-underway/).
+
 Following the [letters sent by myself and Cllr Dr Rohit Kumar Dasgupta to Seb Dance, Deputy Mayor for Transport](/news/canning-town-escalator-outage-tfl-pressure/) pressing TfL for answers on the prolonged Escalator 10 outage at Canning Town, we have now received a response. Here is an update for residents on where things stand.
 
 ## TfL's Response
