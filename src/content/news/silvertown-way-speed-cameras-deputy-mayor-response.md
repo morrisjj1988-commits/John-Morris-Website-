@@ -4,7 +4,7 @@ date: 2026-10-02
 category: Road Safety
 excerpt: "Seb Dance, Deputy Mayor for Transport, has replied to my request for speed cameras on Silvertown Way and Peto Street North. There's no timescale for new fixed cameras, but the reply points to a council referral route that can get mobile speed cameras out within about two weeks."
 image: "/images/news/placeholder.svg"
-imageAlt: "Traffic moving along Silvertown Way in Canning Town South"
+imageAlt: "Aerial view of traffic on Silvertown Way in Canning Town South, with the 20mph road markings and new housing alongside"
 draft: false
 ---
 
