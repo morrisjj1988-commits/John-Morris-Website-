@@ -8,7 +8,7 @@ imageAlt: "Canning Town Underground and DLR station platform"
 draft: false
 ---
 
-> **Latest update (2 October 2026):** The end-of-September date for Escalator 10 has passed and TfL's station page still shows a reduced escalator service. I have written to the Deputy Mayor asking for a full, dated update on both escalators. [Read the latest update](/news/canning-town-escalator-deadline-passed/).
+> **Latest update (5 October 2026):** The end-of-September date was missed. TfL now expects Escalator 10 back in service by 9 October, and there is still no date for Escalator 4. [Read the latest update](/news/canning-town-escalators-new-date-escalator-10/).
 
 There is finally some progress to report on the escalators at Canning Town station. Seb Dance, Deputy Mayor for Transport, has replied to a letter from James Asser MP and my fellow Canning Town South councillor, Cllr Dr Rohit Kumar Dasgupta. His reply confirms that repair works on Escalator 10 have now started.
 
