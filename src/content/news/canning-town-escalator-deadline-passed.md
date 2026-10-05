@@ -8,6 +8,8 @@ imageAlt: "Canning Town Underground and DLR station platform"
 draft: false
 ---
 
+> **Latest update (5 October 2026):** TfL now expects Escalator 10 back in service by 9 October. There is still no date for Escalator 4. [Read the latest update](/news/canning-town-escalators-new-date-escalator-10/).
+
 Last week, [Seb Dance, Deputy Mayor for Transport, confirmed](/news/canning-town-escalator-works-underway/) that works to replace the steps on Escalator 10 at Canning Town were underway, with completion expected by the end of September. It was the first firm date residents had been given since the escalator failed.
 
 That date has now passed. TfL's live station page still shows a reduced escalator service at Canning Town. It does not say which escalators are still out of action, and there has been no update on whether the Escalator 10 works have finished.
