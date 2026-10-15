@@ -117,4 +117,25 @@ const realImage = getNewsImage(post.id);
   .prose :global(ol) {
     margin-bottom: 1.2em;
   }
+
+  .prose :global(table) {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5em;
+    font-size: 0.95rem;
+  }
+
+  .prose :global(th),
+  .prose :global(td) {
+    padding: 0.6em 0.8em;
+    border-bottom: 1px solid var(--color-border);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .prose :global(th) {
+    background: var(--color-surface-alt);
+  }
 </style>
