@@ -4,7 +4,7 @@ date: 2026-10-31
 category: Housing
 excerpt: "Residents of Centurion Tower, St Vincent Court, Sovereign Tower, Thanet Tower and Prince Court have been told to leave their homes because of structural safety concerns. Do not return to your home until further notice. Here is where to get help."
 image: "/images/news/placeholder.svg"
-imageAlt: "The Caxton Works / Royal Gateway development in Canning Town"
+imageAlt: "The Caxton Works entrance arch between two residential tower blocks in Canning Town, under a clear blue sky"
 draft: false
 ---
 
