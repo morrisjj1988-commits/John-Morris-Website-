@@ -31,6 +31,20 @@ const latestPosts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.
   title="Cllr John Morris"
   description="John Morris is your local councillor for Canning Town South on Newham Council. Get help with housing, council tax, planning and more, and follow the latest local news."
 >
+  <section class="urgent-notice" aria-labelledby="urgent-notice-title">
+    <div class="container urgent-notice__inner">
+      <p class="urgent-notice__tag">Urgent · Caxton Works / Royal Gateway</p>
+      <h2 id="urgent-notice-title">Residents told to leave five blocks over structural safety concerns</h2>
+      <p>
+        Centurion Tower, St Vincent Court, Sovereign Tower, Thanet Tower and Prince Court have been evacuated.{' '}
+        <strong>Do not return to your home until further notice.</strong>
+      </p>
+      <a class="urgent-notice__link" href={withBase('/news/caxton-works-royal-gateway-update/')}>
+        Where to get help and the latest update &rarr;
+      </a>
+    </div>
+  </section>
+
   <Hero />
 
   <section class="section section-alt">
@@ -119,6 +133,53 @@ const latestPosts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.
 </BaseLayout>
 
 <style>
+  .urgent-notice {
+    background: var(--color-red-700);
+    color: #fff;
+    padding-block: 1.75rem;
+  }
+
+  .urgent-notice__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .urgent-notice__tag {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .urgent-notice h2 {
+    color: #fff;
+    margin: 0;
+    font-size: clamp(1.35rem, 3vw, 1.9rem);
+  }
+
+  .urgent-notice p {
+    margin: 0;
+    max-width: 65ch;
+  }
+
+  .urgent-notice__link {
+    align-self: flex-start;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 2px;
+    margin-top: 0.25rem;
+  }
+
+  .urgent-notice__link:hover,
+  .urgent-notice__link:focus-visible {
+    border-bottom-color: transparent;
+  }
+
   .no-news {
     text-align: center;
     padding-block: 1rem 1.5rem;
