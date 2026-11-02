@@ -1,18 +1,41 @@
 ---
 title: "Caxton Works / Royal Gateway Update"
-date: 2026-10-31
+date: 2026-11-02
 category: Housing
-excerpt: "Residents of Centurion Tower, St Vincent Court, Sovereign Tower, Thanet Tower and Prince Court have been told to leave their homes because of structural safety concerns. Do not return to your home until further notice. Here is where to get help."
+excerpt: "Council tax and business rates exemption confirmed for affected properties, help finding childcare for nursery families, and units available at Brunel Street Works for businesses that have had to close. Residents must still not return home until further notice."
 image: "/images/news/placeholder.svg"
-imageAlt: "The Caxton Works / Royal Gateway development in Canning Town"
+imageAlt: "The Caxton Works entrance arch between two residential tower blocks in Canning Town, under a clear blue sky"
 draft: false
 ---
+
+## Update: 2 November 2026
+
+### Council tax and business rates exemption confirmed
+
+Following our call for a freeze, the council's Head of Revenues and Finance Transactional Services has confirmed that the affected properties will be exempt from both council tax and business rates (NNDR). The exemption applies while the properties are prohibited by law from being occupied and the prohibition notice remains in place.
+
+### Help for nursery families
+
+The council's Early Years team is contacting parents to help find alternative childcare places for children affected by the nursery's closure.
+
+### Space for affected businesses
+
+Your local councillors have contacted Brunel Street Works and Hallsville Quarter about space for businesses that have had to close. Brunel Street Works has confirmed it has units available.
+
+If your business has been affected, please get in touch with Cllr John Morris or Cllr Rohit Dasgupta for further details:
+
+- **Cllr John Morris:** [John.Morris@newham.gov.uk](mailto:John.Morris@newham.gov.uk)
+- **Cllr Rohit Dasgupta:** [Rohit.Dasgupta@newham.gov.uk](mailto:Rohit.Dasgupta@newham.gov.uk)
+
+For support contacts and the latest official information, see the [council's page](https://www.newham.gov.uk/housing-homes-homelessness/centurion-tower-st-vincent-court-sovereign-tower).
+
+## Original update: 31 October 2026
 
 Prime Property Management has told residents of **Centurion Tower, St Vincent Court, Sovereign Tower, Thanet Tower and Prince Court** to leave their homes because of structural safety concerns. The first three blocks were evacuated on 23 October and the other two on 30 October. **Do not return to your home until further notice.**
 
 Newham Council is supporting residents. For the latest official information, see the [council's page](https://www.newham.gov.uk/housing-homes-homelessness/centurion-tower-st-vincent-court-sovereign-tower).
 
-## Where to get help
+### Where to get help
 
 - **Insurance and reclaiming costs (Prime):** [Royalgateway@primepm.co.uk](mailto:Royalgateway@primepm.co.uk) / [020 3983 2488](tel:+442039832488)
 - **Council advice, or concerns about a vulnerable person:** [Advice, support and benefits](https://www.newham.gov.uk/advice-support-benefits)
@@ -24,7 +47,7 @@ Newham Council is supporting residents. For the latest official information, see
 - **Samaritans:** [116 123](tel:116123), free and available 24/7
 - **Newham Talking Therapies (free NHS counselling):** [020 8175 1770](tel:+442081751770), Monday to Friday 9am to 5pm
 
-## What are your local councillors doing?
+### What are your local councillors doing?
 
 - Asking for the roads around Caxton Works to be closed.
 - Calling for a freeze on council tax and business rates for affected residents and businesses.
