@@ -2,17 +2,42 @@
 title: "Caxton Works / Royal Gateway Update"
 date: 2026-11-02
 category: Housing
-excerpt: "Council tax and business rates exemption confirmed for affected properties, help finding childcare for nursery families, and units available at Brunel Street Works for businesses that have had to close. Residents must still not return home until further notice."
+excerpt: "Four affected businesses connected with Brunel Street Works and Hallsville Quarter, councillors pressing the council to issue a prohibition notice so council tax and business rates are suspended, and James Asser MP asks mortgage lenders for a payment freeze. Residents must still not return home until further notice."
 image: "/images/news/placeholder.svg"
 imageAlt: "The Caxton Works entrance arch between two residential tower blocks in Canning Town, under a clear blue sky"
 draft: false
 ---
 
+## Latest update: 5 November 2026
+
+### Four businesses connected with new space
+
+Cllr John Morris and Cllr Rohit Dasgupta have connected four affected businesses with Brunel Street Works and Hallsville Quarter, to help them find space to keep trading.
+
+If your business has been affected and you would like help, please contact either councillor (details below).
+
+### Pressing the council to issue a prohibition notice
+
+We are pressing the council to issue a prohibition notice for the affected buildings. Once the notice is in place, council tax and business rates will be suspended for affected residents and businesses.
+
+### James Asser MP writes to mortgage lenders
+
+James Asser MP has written to mortgage lenders asking them to give affected borrowers a mortgage payment freeze. He has asked lenders to:
+
+- offer an initial three-month payment holiday, extended if residents still cannot return home
+- waive any associated fees
+- make sure the arrangement does not harm borrowers' credit records
+- set up a simple, fast-tracked process for residents of the five affected buildings
+
+[Read James Asser MP's letter to mortgage lenders](/images/news/james-asser-mp-letter-mortgage-lenders-caxton-works.jpg)
+
+If you have a mortgage on an affected property, contact your lender to ask what support it can offer.
+
 ## Update: 2 November 2026
 
-### Council tax and business rates exemption confirmed
+### Council tax and business rates exemption agreed
 
-Following our call for a freeze, the council's Head of Revenues and Finance Transactional Services has confirmed that the affected properties will be exempt from both council tax and business rates (NNDR). The exemption applies while the properties are prohibited by law from being occupied and the prohibition notice remains in place.
+Following our call for a freeze, the council's Head of Revenues and Finance Transactional Services has confirmed that the affected properties will be exempt from both council tax and business rates (NNDR). The exemption will apply once the council issues a prohibition notice, which legally prohibits the properties from being occupied. We are pressing the council to issue this notice.
 
 ### Help for nursery families
 
