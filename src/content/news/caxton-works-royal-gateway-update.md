@@ -35,9 +35,9 @@ If you have a mortgage on an affected property, contact your lender to ask what 
 
 ## Update: 2 November 2026
 
-### Council tax and business rates exemption confirmed
+### Council tax and business rates exemption agreed
 
-Following our call for a freeze, the council's Head of Revenues and Finance Transactional Services has confirmed that the affected properties will be exempt from both council tax and business rates (NNDR). The exemption applies while the properties are prohibited by law from being occupied and the prohibition notice remains in place.
+Following our call for a freeze, the council's Head of Revenues and Finance Transactional Services has confirmed that the affected properties will be exempt from both council tax and business rates (NNDR). The exemption will apply once the council issues a prohibition notice, which legally prohibits the properties from being occupied. We are pressing the council to issue this notice.
 
 ### Help for nursery families
 
