@@ -28,6 +28,7 @@ export type NavLink = { label: string; href: string };
 export const primaryNav: NavLink[] = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about/' },
+  { label: 'Achievements', href: '/key-achievements/' },
   { label: 'News', href: '/news/' },
   { label: 'Road Safety Campaign', href: '/road-safety-campaign/' },
   { label: 'Car Wash Noise Campaign', href: '/caxton-street-car-wash-campaign/' },

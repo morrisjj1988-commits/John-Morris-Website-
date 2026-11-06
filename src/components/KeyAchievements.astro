@@ -2,6 +2,18 @@
 // Counter strip of headline Newham figures, styled after the site's
 // navy / brick / gold palette. Figures are council-wide achievements,
 // so the copy credits Newham rather than claiming personal delivery.
+import { withBase } from '../lib/url';
+
+interface Props {
+  /** Show the "See all achievements" link to the full page (homepage only). */
+  showLink?: boolean;
+  /** Show the short intro line under the heading. */
+  showIntro?: boolean;
+  /** Small label above the heading. */
+  eyebrow?: string;
+}
+
+const { showLink = true, showIntro = true, eyebrow = 'Key achievements' } = Astro.props;
 const achievements = [
   {
     figure: '13th → 8th',
@@ -34,11 +46,13 @@ const achievements = [
 <section class="section achievements" aria-labelledby="achievements-title">
   <div class="container">
     <div class="section-header achievements__header">
-      <p class="eyebrow">Key achievements</p>
+      <p class="eyebrow">{eyebrow}</p>
       <h2 id="achievements-title">What Newham has delivered</h2>
-      <p class="text-muted">
-        Safer, healthier streets across the borough, which I'm proud to support as your councillor.
-      </p>
+      {showIntro && (
+        <p class="text-muted">
+          Safer, healthier streets across the borough, which I'm proud to support as your councillor.
+        </p>
+      )}
     </div>
 
     <ul class="achievements__grid" role="list">
@@ -58,6 +72,12 @@ const achievements = [
         </li>
       ))}
     </ul>
+
+    {showLink && (
+      <div class="achievements__cta">
+        <a class="btn btn-secondary" href={withBase('/key-achievements/')}>See all key achievements &rarr;</a>
+      </div>
+    )}
   </div>
 </section>
 
@@ -74,6 +94,11 @@ const achievements = [
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 2.25rem 2rem;
+  }
+
+  .achievements__cta {
+    margin-top: 2.5rem;
+    text-align: center;
   }
 
   .achievement {
