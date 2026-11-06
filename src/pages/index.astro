@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
+import KeyAchievements from '../components/KeyAchievements.astro';
 import NewsCard from '../components/NewsCard.astro';
 import Newsletter from '../components/Newsletter.astro';
 import { Icon } from 'astro-icon/components';
@@ -46,6 +47,8 @@ const latestPosts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.
   </section>
 
   <Hero />
+
+  <KeyAchievements />
 
   <section class="section section-alt">
     <div class="container">
