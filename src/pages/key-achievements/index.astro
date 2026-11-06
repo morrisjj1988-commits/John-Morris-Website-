@@ -1,0 +1,225 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import KeyAchievements from '../../components/KeyAchievements.astro';
+import { withBase } from '../../lib/url';
+
+// Council-wide achievements, so the wording credits Newham rather than
+// claiming personal delivery. Contested or time-sensitive items are dated
+// and kept factual.
+const blocks = [
+  {
+    tag: 'Schools',
+    title: 'Healthy School Streets',
+    body: [
+      'Traffic is restricted around schools at drop-off and pick-up, cutting average traffic by 64% and NO2 by 7.5% against streets without a scheme.',
+      'Newham has gone from 5 schools in 2019 to dozens of school streets across the borough.',
+    ],
+  },
+  {
+    tag: 'Award · 2025',
+    title: 'Most Improved Borough',
+    body: [
+      "Newham won the 2025 Healthy Streets Scorecard's Most Improved Borough award, climbing from 13th to 8th.",
+      'Its score rose by 0.69 to 5.87, and 20mph coverage went from 41% to 99%.',
+    ],
+  },
+  {
+    tag: 'Royal Docks',
+    title: 'Royal Docks Corridor',
+    body: [
+      'A £34.69m transformation of Silvertown Way and North Woolwich Road, with segregated cycle tracks, new crossings, wider pavements and trees.',
+      'Phase 6 (Western Gateway) began in October 2025, paid for by under-spend on the original scheme.',
+    ],
+    link: { label: 'Read about my tour of the corridor', href: '/news/touring-the-royal-docks-corridor/' },
+  },
+  {
+    tag: 'Cycling',
+    title: 'Romford Road cycle route',
+    body: [
+      'Part of an £8.7m Levelling Up investment to build a cycle route along the full length of Romford Road, from Stratford to the North Circular.',
+      'The Forest Gate junction (Woodgrange Road and Upton Lane) was approved in August 2026 with no objections.',
+    ],
+  },
+  {
+    tag: 'Beckton',
+    title: 'Beckton Corridor',
+    body: [
+      'A rebuilt walking and cycling route linking Beckton station to Beckton Park, with resurfacing, lighting, CCTV and greenery.',
+      'It is part of the wider Levelling Up-funded Beckton Walking and Cycling project.',
+    ],
+  },
+  {
+    tag: 'Low Traffic Neighbourhood',
+    title: 'West Ham Park Low Traffic Neighbourhood',
+    body: [
+      'In February 2026, Cabinet voted unanimously to keep the scheme, citing toxic air and a safer school run.',
+      'The Park Primary headteacher wrote that it had "transformed" the area. Residents were split in the survey, with 48% happy and 47% unhappy.',
+    ],
+  },
+  {
+    tag: 'Air quality',
+    title: 'Cleaner air',
+    body: [
+      'Cabinet endorsed the Air Quality Action Plan 2025–30 in March 2026.',
+      "Newham's Just Transition Plan won the LGC Net Zero Award in 2025.",
+    ],
+  },
+  {
+    tag: 'Pilot',
+    title: 'Regulating dockless bikes',
+    body: [
+      'A pilot of formal parking bays and geo-fencing, to keep pavements clear while keeping cycle hire affordable.',
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Key Achievements"
+  description="What Newham Council has delivered on safer, healthier streets: Healthy School Streets, the Royal Docks Corridor, new cycle routes, cleaner air and more."
+>
+  <section class="section page-intro">
+    <div class="container page-intro__inner">
+      <p class="eyebrow">Key achievements</p>
+      <h1>Safer, healthier streets for Newham</h1>
+      <p class="text-muted">
+        Newham Council has made some of the fastest progress in London on making streets safer, cleaner and easier
+        to walk and cycle. As your councillor for Canning Town South, I'm proud to support this work and to push for
+        more of it in our ward.
+      </p>
+    </div>
+  </section>
+
+  <KeyAchievements showLink={false} showIntro={false} eyebrow="By the numbers" />
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">In our communities</p>
+        <h2>My work in our communities</h2>
+        <p class="text-muted">The schemes behind the numbers, and where each one has got to.</p>
+      </div>
+
+      <div class="blocks">
+        {blocks.map((block) => (
+          <article class="card card--accent block">
+            <span class="block__tag">{block.tag}</span>
+            <h3>{block.title}</h3>
+            {block.body.map((para) => <p class="text-muted">{para}</p>)}
+            {block.link && (
+              <a class="block__link" href={withBase(block.link.href)}>{block.link.label} &rarr;</a>
+            )}
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section achievements-cta">
+    <div class="container achievements-cta__inner">
+      <h2>Want to see this on your street?</h2>
+      <p>
+        I'm pressing for safer roads in Canning Town South, starting with Silvertown Way, Peto Street North and
+        Minnie Baldock Street.
+      </p>
+      <div class="achievements-cta__actions">
+        <a class="btn btn-primary" href={withBase('/road-safety-campaign/')}>Join the road safety campaign &rarr;</a>
+        <a class="achievements-cta__link" href={withBase('/contact/')}>Get in touch</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-intro__inner {
+    max-width: 46rem;
+  }
+
+  .blocks {
+    margin-top: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 760px) {
+    .blocks {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .block {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .block h3 {
+    margin-bottom: 0.6rem;
+  }
+
+  .block p {
+    margin-bottom: 0.7em;
+  }
+
+  .block p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .block__tag {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--color-red-600);
+    margin-bottom: 0.6rem;
+  }
+
+  .block__link {
+    margin-top: 1rem;
+    font-weight: 600;
+    font-size: 0.92rem;
+    text-decoration: none;
+  }
+
+  .achievements-cta {
+    background: var(--color-navy-900);
+    color: var(--color-paper);
+  }
+
+  .achievements-cta__inner {
+    max-width: 46rem;
+    text-align: center;
+  }
+
+  .achievements-cta h2 {
+    color: var(--color-paper);
+  }
+
+  .achievements-cta p {
+    color: #c7cdd8;
+  }
+
+  .achievements-cta__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1.5rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+
+  .achievements-cta__link {
+    font-weight: 700;
+    color: var(--color-gold-500);
+    text-decoration: none;
+    border-bottom: 2px solid var(--color-gold-500);
+    padding-bottom: 2px;
+  }
+
+  .achievements-cta__link:hover {
+    color: #fff;
+    border-color: #fff;
+  }
+</style>
