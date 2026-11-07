@@ -1,14 +1,54 @@
 ---
 title: "Caxton Works / Royal Gateway Update"
-date: 2026-11-02
+date: 2026-11-07
 category: Housing
-excerpt: "Four affected businesses connected with Brunel Street Works and Hallsville Quarter, councillors pressing the council to issue a prohibition notice so council tax and business rates are suspended, and James Asser MP asks mortgage lenders for a payment freeze. Residents must still not return home until further notice."
+excerpt: "Galliard Homes has written to residents promising to reimburse reasonable relocation and temporary accommodation costs until 19 November, and has set out its engineering plans. There is still no date for residents to return home, and we are still pressing for a return timetable, support beyond 19 November and a simple claims process."
 image: "/images/news/placeholder.svg"
 imageAlt: "The Caxton Works entrance arch between two residential tower blocks in Canning Town, under a clear blue sky"
 draft: false
 ---
 
-## Latest update: 5 November 2026
+## Latest update: 7 November 2026
+
+### Galliard's letter on relocation costs and the road to getting residents home
+
+Galliard Homes wrote directly to Royal Gateway residents on 5 November. I know many residents have received it, but I'm setting out what it says and what I'm still pushing for.
+
+### Help with accommodation costs
+
+- Galliard says it will reimburse the *reasonable* costs of relocation and temporary accommodation.
+- For residents of Centurion Tower, Sovereign Tower and St Vincent Court, this runs from 23 October. For Thanet Tower and Prince Court, it runs from 30 October.
+- This applies for an initial 14 days, up to and including Thursday 19 November. Galliard says it will write again before 19 November to confirm what happens after that.
+- **Keep all your receipts and proof of payment.** Galliard says it will write with full details of how to claim and how payments will be made.
+- Anything already paid or reimbursed through your own insurance, or from any other source, will be taken into account. You'll need to give details of any insurance claims when you submit costs.
+
+### Getting you home
+
+- Galliard says it is working with two engineering firms. Buro Happold is carrying out a detailed review of all five buildings, and Gravity Consulting Engineers is working on plans for temporary supports, permanent works, or both.
+- Murphy Geospatial took over monitoring of the buildings on 2 November.
+- Galliard has shared a proposed roadmap with the other parties involved. It covers monitoring, understanding the buildings, finding solutions, and independent review and approval before any works. Galliard says the first three stages will run at the same time where possible.
+- The letter says it is too early to determine the extent or cause of the concerns, or where responsibility lies. **There is still no date for when residents can return.** Galliard says it will share a timetable "as soon as we can".
+
+### Who to contact
+
+Prime Property Management continues to manage the development for the Right to Manage companies. Contact Prime about building insurance, service charges, storage and access restrictions (contact details below).
+
+### What I'm still pressing for
+
+This letter is a step forward, but it leaves a lot unanswered. Alongside James Asser MP, Cllr Rohit Dasgupta and I are continuing to push for:
+
+- a clear return timetable, and certainty on support beyond 19 November
+- clarity on what counts as "reasonable" costs, and a simple, quick claims process so residents aren't left out of pocket
+- action on mortgage payments, including lenders agreeing to pause them
+- a freeze on council tax and business rates for affected residents and businesses
+- an alternative venue for the nursery
+- road closures around Caxton Works
+
+If you are affected and have problems claiming costs or finding accommodation, please [get in touch](mailto:John.Morris@newham.gov.uk) and I will take your case up directly.
+
+*Galliard states its support is provided without admission of liability and without prejudice to its position, including any rights against third parties.*
+
+## Update: 5 November 2026
 
 ### Four businesses connected with new space
 
