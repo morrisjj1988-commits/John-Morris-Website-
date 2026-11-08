@@ -88,6 +88,10 @@ These are also available on the [council's website](https://www.newham.gov.uk/do
 
 The council's out-of-hours team is available 24 hours a day on [020 8430 2000](tel:+442084302000). For the council's support information, see its [page for affected residents](https://www.newham.gov.uk/housing-homes-homelessness/centurion-tower-st-vincent-court-sovereign-tower).
 
+### Nursery places for Goldensparks families
+
+Little Elms Daycare Nurseries & Pre-Schools has offered to support families affected by the Goldensparks Nursery closure. Places may be available at its Greenwich Peninsula nursery, subject to availability. Families can contact the council's Early Years team for further guidance.
+
 ## Update: 7 November 2026
 
 ### Galliard's letter on relocation costs and the road to getting residents home
