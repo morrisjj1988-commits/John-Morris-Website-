@@ -1,14 +1,45 @@
 ---
 title: "Caxton Works / Royal Gateway Update"
-date: 2026-11-07
+date: 2026-11-08
 category: Housing
-excerpt: "Galliard Homes has written to residents promising to reimburse reasonable relocation and temporary accommodation costs until 19 November, and has set out its engineering plans. There is still no date for residents to return home, and we are still pressing for a return timetable, support beyond 19 November and a simple claims process."
+excerpt: "Newham Council has served Dangerous Structure Notices on the owners of all five Royal Gateway buildings, requiring temporary works, monitoring, a full structural appraisal and remedial works. Galliard has also promised to reimburse reasonable relocation costs until 19 November. There is still no date for residents to return home."
 image: "/images/news/placeholder.svg"
 imageAlt: "The Caxton Works entrance arch between two residential tower blocks in Canning Town, under a clear blue sky"
 draft: false
 ---
 
-## Latest update: 7 November 2026
+## Latest update: 8 November 2026
+
+### Council serves Dangerous Structure Notices on all five buildings
+
+Newham Council has published details of the legal notices it has served on the five Royal Gateway buildings under the London Building Acts (Amendment) Act 1939. The council has formally decided that the buildings are dangerous structures, based on information from third parties, its own physical inspection and the necessary certification.
+
+- **Centurion Tower, Sovereign Tower and St Vincent Court:** the council was alerted through a report to its Contact Centre at 12:30am on 23 October. Notices were served on 29 October.
+- **Thanet Tower and Prince Court:** the council was made aware of concerns on 30 October. Notices were served on 5 November.
+
+The notices were served on the owners of the buildings. **They have not been served on residents or businesses**, so you won't receive one and you don't need to do anything in response.
+
+### What the owners are required to do
+
+The notices set out what the council considers is needed to assess or remove the danger:
+
+- immediate temporary works and risk mitigation
+- structural monitoring, investigation and submission of information to the council
+- a comprehensive structural appraisal and investigation of the materials
+- a structural safety report and remedial works
+- an independent external peer review
+- continuing statutory responsibilities, with enforcement if they are not met
+- general safety requirements, including restricting access to unsafe areas, putting temporary protective measures in place, and cooperating fully with Building Control officers during further inspections
+
+The owners can formally dispute the certification or the actions required. If they neither dispute the notices nor comply with them, the council can take further enforcement action.
+
+### What this means for residents
+
+This puts the council's view that the buildings are dangerous on a legal footing, and it places clear duties on the owners to investigate and fix the problem, with independent checking. It is not the same as the prohibition notice that would trigger the council tax and business rates exemption, and Cllr Dasgupta and I are still pressing for that to be issued.
+
+The notices do not set a date for anyone to return home. If you have questions about your situation, please [get in touch](mailto:John.Morris@newham.gov.uk).
+
+## Update: 7 November 2026
 
 ### Galliard's letter on relocation costs and the road to getting residents home
 
