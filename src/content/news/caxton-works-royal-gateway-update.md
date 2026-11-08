@@ -79,8 +79,10 @@ The owners can formally dispute the certification or the actions required. If th
 
 Read the council's summaries of the notices:
 
-- [North Residential Buildings: Centurion Tower, St Vincent Court and Sovereign Tower (PDF)](https://www.newham.gov.uk/downloads/file/11596/dangerous-structural-notices-canning-town-buildings)
-- [South Residential Buildings: Thanet Tower and Prince Court (PDF)](https://www.newham.gov.uk/downloads/file/11627/dangerous-structural-notices-canning-town-south-buildings)
+- [North Residential Buildings: Centurion Tower, St Vincent Court and Sovereign Tower (PDF)](/documents/dangerous-structure-notices-north-buildings.pdf)
+- [South Residential Buildings: Thanet Tower and Prince Court (PDF)](/documents/dangerous-structure-notices-south-buildings.pdf)
+
+These are also available on the [council's website](https://www.newham.gov.uk/downloads/file/11596/dangerous-structural-notices-canning-town-buildings).
 
 ### Urgent help
 
