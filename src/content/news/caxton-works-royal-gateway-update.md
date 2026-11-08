@@ -1,14 +1,94 @@
 ---
 title: "Caxton Works / Royal Gateway Update"
-date: 2026-11-07
+date: 2026-11-08
 category: Housing
-excerpt: "Galliard Homes has written to residents promising to reimburse reasonable relocation and temporary accommodation costs until 19 November, and has set out its engineering plans. There is still no date for residents to return home, and we are still pressing for a return timetable, support beyond 19 November and a simple claims process."
+excerpt: "Council tax and business rates relief is now confirmed for everyone affected, applied automatically and backdated. The council has also served Dangerous Structure Notices on the owners of all five buildings, and set out help with housing, parking fines and pets. There is still no date for residents to return home."
 image: "/images/news/placeholder.svg"
 imageAlt: "The Caxton Works entrance arch between two residential tower blocks in Canning Town, under a clear blue sky"
 draft: false
 ---
 
-## Latest update: 7 November 2026
+## Latest update: 8 November 2026
+
+Newham Council published an update for residents on 6 November. It says it will update its page every Monday, Wednesday and Friday, with extra updates if there are significant developments. Here is what it means for you.
+
+### Council tax relief confirmed
+
+**You don't need to apply.** The council is giving a 100% discretionary council tax reduction to residents who have had to leave their homes.
+
+- It is backdated to 23 October for Centurion Tower, Sovereign Tower and St Vincent Court, and to 30 October for Thanet Tower and Prince Court.
+- It will be reviewed monthly.
+- Direct Debit payers are being dealt with first, so no more money is taken. Once the reduction is applied, any payments will be refunded automatically to the account the Direct Debit came from.
+- If you don't pay by Direct Debit, the council will contact you for bank details so it can refund you.
+
+We called for this from the start, and I'm glad the council has acted without waiting for a prohibition notice.
+
+### Business rates relief for Caxton Works businesses
+
+- Temporary Business Rates Hardship Relief will be applied automatically to eligible businesses in the affected buildings.
+- It runs from 23 October for businesses in the north buildings and from 30 October for the south buildings, for as long as businesses can't access and trade from their premises. It will be reviewed as things develop.
+- The council will contact businesses directly if it needs more information. If you have questions, contact the council's Business Rates Team.
+
+If your business needs help finding temporary space, Cllr Dasgupta and I can put you in touch with Brunel Street Works and Hallsville Quarter (contact details below).
+
+### Housing help if you have nowhere to stay
+
+If you can't arrange accommodation yourself or through your landlord, managing agent, insurer or anyone else responsible, contact the council's Housing, Prevention and Support Service (HPASS) as soon as possible on [020 8430 2000](tel:+442084302000).
+
+The council will assess your circumstances under its homelessness duties. Depending on your situation, help can include housing advice, help to find somewhere else to live and, where the legal criteria are met, temporary accommodation. Each case is assessed individually.
+
+### Parking fines
+
+The council is setting up a process to review Penalty Charge Notices issued to residents as a direct result of the evacuation. Eligible fines will be considered for cancellation. The council says it will share details of how this will work soon. Keep hold of any PCNs you have received.
+
+### Temporary care for pets
+
+The Newham Animal Welfare Team can board most animals while you are out of your home.
+
+- **Contact:** [020 3373 2777](tel:+442033732777) or [animal.welfare@newham.gov.uk](mailto:animal.welfare@newham.gov.uk)
+- **Cost:** £18 a day for cats and £24 a day for dogs. Prices for other pets are available on request.
+- **Proof of vaccination is needed.** You can ask your vet to email it straight to the team.
+
+### Galliard's relocation costs
+
+The council has repeated the details of Galliard's offer (see the 7 November update below), with two points worth noting:
+
+- **Don't take on significant costs without first getting confirmation** from the responsible organisation that they will be reimbursed.
+- The council is not part of this arrangement and can't guarantee the outcome of individual claims. If you have trouble with a claim, [get in touch](mailto:John.Morris@newham.gov.uk) and I will take it up.
+
+### Dangerous Structure Notices served on all five buildings
+
+The council has served legal notices under the London Building Acts (Amendment) Act 1939 on the five buildings, having formally decided they are dangerous structures. It based this on information from third parties, its own physical inspection and the necessary certification.
+
+- **Centurion Tower, Sovereign Tower and St Vincent Court:** the council was alerted through a report to its Contact Centre at 12:30am on 23 October. Notices were served on 29 October.
+- **Thanet Tower and Prince Court:** the council was made aware of concerns on 30 October. Notices were served on 5 November.
+
+The notices were served on the owners of the buildings. **They have not been served on residents or businesses**, so you won't receive one and you don't need to do anything in response.
+
+The notices require the owners to carry out:
+
+- immediate temporary works and risk mitigation
+- structural monitoring, investigation and submission of information to the council
+- a comprehensive structural appraisal and investigation of the materials
+- a structural safety report and remedial works
+- an independent external peer review
+- continuing statutory responsibilities, with enforcement if they are not met
+- general safety requirements, including restricting access to unsafe areas, putting temporary protective measures in place, and cooperating fully with Building Control officers during further inspections
+
+The owners can formally dispute the certification or the actions required. If they neither dispute the notices nor comply with them, the council can take further enforcement action. The notices do not set a date for anyone to return home.
+
+Read the council's summaries of the notices:
+
+- [North Residential Buildings: Centurion Tower, St Vincent Court and Sovereign Tower (PDF)](/documents/dangerous-structure-notices-north-buildings.pdf)
+- [South Residential Buildings: Thanet Tower and Prince Court (PDF)](/documents/dangerous-structure-notices-south-buildings.pdf)
+
+These are also available on the [council's website](https://www.newham.gov.uk/downloads/file/11596/dangerous-structural-notices-canning-town-buildings).
+
+### Urgent help
+
+The council's out-of-hours team is available 24 hours a day on [020 8430 2000](tel:+442084302000). For the council's support information, see its [page for affected residents](https://www.newham.gov.uk/housing-homes-homelessness/centurion-tower-st-vincent-court-sovereign-tower).
+
+## Update: 7 November 2026
 
 ### Galliard's letter on relocation costs and the road to getting residents home
 
